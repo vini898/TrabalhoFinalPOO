@@ -1,0 +1,8 @@
+[
+{
+  "directory": "X:/POO - PROJETO FINAL/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/headers_check.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\headers_check.dir\\tests\\headers_check.cpp.obj -c \"X:\\POO - PROJETO FINAL\\tests\\headers_check.cpp\"",
+  "file": "X:/POO - PROJETO FINAL/tests/headers_check.cpp",
+  "output": "CMakeFiles/headers_check.dir/tests/headers_check.cpp.obj"
+}
+]
