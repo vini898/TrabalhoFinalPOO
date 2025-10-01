@@ -111,16 +111,89 @@ private:
     }
 
     void moveCard() {
-        std::cout << "Funcionalidade de mover cartão - em desenvolvimento\n";
+        // Lista colunas e cartões primeiro para referência
+        listEverything();
+    
+        std::cout << "\n--- Mover Cartão ---\n";
+    
+        // Obter ID do cartão
+        std::cout << "ID do cartão a mover: ";
+        Card::Id cardId;
+        std::cin >> cardId;
+        std::cin.ignore();
+    
+        // Verificar se cartão existe
+        const Card* card = m_board.findCard(cardId);
+        if (!card) {
+            std::cout << "Cartão não encontrado!\n";
+            return;
+        }
+    
+        // Encontrar coluna atual do cartão
+        Column::Id fromColumnId = 0;
+        for (const auto& column : m_board.columns()) {
+            if (column.indexOf(cardId).has_value()) {
+                fromColumnId = column.id();
+                std::cout << "Cartão está na coluna: " << column.name() << "\n";
+                break;
+            }
+        }
+    
+        if (fromColumnId == 0) {
+            std::cout << "Cartão não está em nenhuma coluna!\n";
+            return;
+        }
+    
+        // Listar colunas destino
+        std::cout << "\nColunas disponíveis:\n";
+        for (const auto& column : m_board.columns()) {
+            if (column.id() != fromColumnId) {
+                std::cout << "  [" << column.id() << "] " << column.name() << "\n";
+            }
+        }
+    
+        // Obter coluna destino
+        std::cout << "ID da coluna destino: ";
+        Column::Id toColumnId;
+        std::cin >> toColumnId;
+        std::cin.ignore();
+    
+        // Verificar se coluna destino existe e é diferente da origem
+        if (toColumnId == fromColumnId) {
+            std::cout << "Coluna destino deve ser diferente da origem!\n";
+            return;
+        }
+    
+        const Column* toColumn = m_board.findColumn(toColumnId);
+        if (!toColumn) {
+            std::cout << "Coluna destino não encontrada!\n";
+            return;
+        }
+    
+        // Mover cartão (sempre para o final da coluna destino)
+        if (m_board.moveCard(fromColumnId, toColumnId, cardId, toColumn->cardIds().size())) {
+            std::cout << "Cartão movido com sucesso!\n";
+        
+            // Registrar no activity log
+            ActivityLog::Entry entry;
+            entry.timestamp = std::chrono::system_clock::now();
+            entry.action = "MOVE_CARD";
+            entry.details = "Cartão " + std::to_string(cardId) + " movido da coluna " + 
+                        std::to_string(fromColumnId) + " para " + std::to_string(toColumnId);
+            m_board.activityLog().append(std::move(entry));
+        
+        } else {
+            std::cout << "Erro ao mover cartão!\n";
+        }
     }
 
     void listEverything() {
         std::cout << "\n=== QUADRO: " << m_board.title() << " ===\n";
-        
+    
         // Lista colunas e cartões
         for (const auto& column : m_board.columns()) {
-            std::cout << "\n--- " << column.name() << " ---\n";
-            
+            std::cout << "\n--- [" << column.id() << "] " << column.name() << " ---\n";
+        
             for (Card::Id cardId : column.cardIds()) {
                 if (const Card* card = m_board.findCard(cardId)) {
                     std::cout << "  [" << card->id() << "] " << card->title();
@@ -129,8 +202,20 @@ private:
                             std::cout << " (@ " << user->name() << ")";
                         }
                     }
+                    // Mostrar tags se existirem
+                    if (!card->tags().empty()) {
+                        std::cout << " [Tags: ";
+                        for (const auto& tag : card->tags()) {
+                            std::cout << tag << " ";
+                        }
+                        std::cout << "]";
+                    }
                     std::cout << "\n";
                 }
+            }
+        
+            if (column.cardIds().empty()) {
+                std::cout << "  (vazia)\n";
             }
         }
     }
