@@ -1,4 +1,5 @@
 #include "Card.h"
+#include <algorithm>  // ← ADICIONE ESTE INCLUDE
 
 namespace kanban {
 

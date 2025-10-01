@@ -1,7 +1,5 @@
-CMakeFiles/kanban_core.dir/src/AssigneeFilter.cpp.obj: \
- X:\POO\ -\ PROJETO\ FINAL\src\AssigneeFilter.cpp \
- X:/POO\ -\ PROJETO\ FINAL/design/include/AssigneeFilter.h \
- X:/POO\ -\ PROJETO\ FINAL/design/include/ICardFilter.h \
+CMakeFiles/kanban_core.dir/src/Card.cpp.obj: \
+ X:\POO\ -\ PROJETO\ FINAL\src\Card.cpp \
  X:/POO\ -\ PROJETO\ FINAL/design/include/Card.h \
  C:/msys64/mingw64/include/c++/15.2.0/string \
  C:/msys64/mingw64/include/c++/15.2.0/bits/requires_hosted.h \
@@ -126,4 +124,12 @@ CMakeFiles/kanban_core.dir/src/AssigneeFilter.cpp.obj: \
  C:/msys64/mingw64/include/_timeval.h \
  C:/msys64/mingw64/include/pthread_time.h \
  C:/msys64/mingw64/include/pthread_compat.h \
- C:/msys64/mingw64/include/c++/15.2.0/bits/parse_numbers.h
+ C:/msys64/mingw64/include/c++/15.2.0/bits/parse_numbers.h \
+ C:/msys64/mingw64/include/c++/15.2.0/algorithm \
+ C:/msys64/mingw64/include/c++/15.2.0/bits/stl_algo.h \
+ C:/msys64/mingw64/include/c++/15.2.0/bits/algorithmfwd.h \
+ C:/msys64/mingw64/include/c++/15.2.0/bits/stl_heap.h \
+ C:/msys64/mingw64/include/c++/15.2.0/bits/uniform_int_dist.h \
+ C:/msys64/mingw64/include/c++/15.2.0/bits/stl_tempbuf.h \
+ C:/msys64/mingw64/include/c++/15.2.0/pstl/glue_algorithm_defs.h \
+ C:/msys64/mingw64/include/c++/15.2.0/pstl/execution_defs.h

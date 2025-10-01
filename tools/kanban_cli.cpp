@@ -57,10 +57,10 @@ private:
         card.setDescription("Esta é uma tarefa de exemplo");
         card.setAssigneeId(1);
         card.addTag("urgente");
-        
-        // Adiciona à primeira coluna
-        if (auto* column = m_board.findColumn(1)) {
-            column->addCard(card.id());
+    
+        // Adiciona à primeira coluna (CORRIGIDO)
+        if (Column* firstColumn = m_board.findColumn(1)) { // ID da primeira coluna
+            firstColumn->addCard(card.id());
         }
     }
 
@@ -94,16 +94,20 @@ private:
         std::string title;
         std::cout << "Título do cartão: ";
         std::getline(std::cin, title);
-        
+    
         Card& card = m_board.createCard(title);
-        
-        // Adiciona à primeira coluna disponível
+    
+        // Adiciona à primeira coluna disponível (CORRIGIDO)
         if (!m_board.columns().empty()) {
-            auto& firstColumn = m_board.columns()[0];
-            firstColumn.addCard(card.id());
+            // Encontra a primeira coluna por ID (não-const)
+            Column* firstColumn = m_board.findColumn(m_board.columns()[0].id());
+            if (firstColumn) {
+                firstColumn->addCard(card.id());
+                std::cout << "Cartão criado: ID " << card.id() << " na coluna '" << firstColumn->name() << "'\n";
+            }
+        } else {
+            std::cout << "Cartão criado: ID " << card.id() << " (nenhuma coluna disponível)\n";
         }
-        
-        std::cout << "Cartão criado: ID " << card.id() << "\n";
     }
 
     void moveCard() {

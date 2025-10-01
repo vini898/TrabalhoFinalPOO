@@ -1,6 +1,6 @@
-CMakeFiles/kanban_core.dir/src/AssigneeFilter.cpp.obj: \
- X:\POO\ -\ PROJETO\ FINAL\src\AssigneeFilter.cpp \
- X:/POO\ -\ PROJETO\ FINAL/design/include/AssigneeFilter.h \
+CMakeFiles/kanban_core.dir/src/TagFilter.cpp.obj: \
+ X:\POO\ -\ PROJETO\ FINAL\src\TagFilter.cpp \
+ X:/POO\ -\ PROJETO\ FINAL/design/include/TagFilter.h \
  X:/POO\ -\ PROJETO\ FINAL/design/include/ICardFilter.h \
  X:/POO\ -\ PROJETO\ FINAL/design/include/Card.h \
  C:/msys64/mingw64/include/c++/15.2.0/string \

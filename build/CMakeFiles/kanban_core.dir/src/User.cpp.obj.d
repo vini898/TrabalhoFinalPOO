@@ -1,8 +1,6 @@
-CMakeFiles/kanban_core.dir/src/AssigneeFilter.cpp.obj: \
- X:\POO\ -\ PROJETO\ FINAL\src\AssigneeFilter.cpp \
- X:/POO\ -\ PROJETO\ FINAL/design/include/AssigneeFilter.h \
- X:/POO\ -\ PROJETO\ FINAL/design/include/ICardFilter.h \
- X:/POO\ -\ PROJETO\ FINAL/design/include/Card.h \
+CMakeFiles/kanban_core.dir/src/User.cpp.obj: \
+ X:\POO\ -\ PROJETO\ FINAL\src\User.cpp \
+ X:/POO\ -\ PROJETO\ FINAL/design/include/User.h \
  C:/msys64/mingw64/include/c++/15.2.0/string \
  C:/msys64/mingw64/include/c++/15.2.0/bits/requires_hosted.h \
  C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++config.h \
@@ -101,29 +99,6 @@ CMakeFiles/kanban_core.dir/src/AssigneeFilter.cpp.obj: \
  C:/msys64/mingw64/include/c++/15.2.0/bits/uses_allocator.h \
  C:/msys64/mingw64/include/c++/15.2.0/bits/uses_allocator_args.h \
  C:/msys64/mingw64/include/c++/15.2.0/tuple \
- C:/msys64/mingw64/include/c++/15.2.0/vector \
- C:/msys64/mingw64/include/c++/15.2.0/bits/stl_uninitialized.h \
- C:/msys64/mingw64/include/c++/15.2.0/bits/stl_vector.h \
- C:/msys64/mingw64/include/c++/15.2.0/bits/stl_bvector.h \
- C:/msys64/mingw64/include/c++/15.2.0/bits/vector.tcc \
- C:/msys64/mingw64/include/c++/15.2.0/optional \
- C:/msys64/mingw64/include/c++/15.2.0/exception \
- C:/msys64/mingw64/include/c++/15.2.0/bits/exception_ptr.h \
- C:/msys64/mingw64/include/c++/15.2.0/bits/cxxabi_init_exception.h \
- C:/msys64/mingw64/include/c++/15.2.0/typeinfo \
- C:/msys64/mingw64/include/c++/15.2.0/bits/nested_exception.h \
- C:/msys64/mingw64/include/c++/15.2.0/bits/enable_special_members.h \
- C:/msys64/mingw64/include/c++/15.2.0/chrono \
- C:/msys64/mingw64/include/c++/15.2.0/bits/chrono.h \
- C:/msys64/mingw64/include/c++/15.2.0/ratio \
  C:/msys64/mingw64/include/c++/15.2.0/cstdint \
  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdint.h \
- C:/msys64/mingw64/include/stdint.h \
- C:/msys64/mingw64/include/c++/15.2.0/limits \
- C:/msys64/mingw64/include/c++/15.2.0/ctime \
- C:/msys64/mingw64/include/time.h C:/msys64/mingw64/include/sys/timeb.h \
- C:/msys64/mingw64/include/sec_api/sys/timeb_s.h \
- C:/msys64/mingw64/include/_timeval.h \
- C:/msys64/mingw64/include/pthread_time.h \
- C:/msys64/mingw64/include/pthread_compat.h \
- C:/msys64/mingw64/include/c++/15.2.0/bits/parse_numbers.h
+ C:/msys64/mingw64/include/stdint.h
