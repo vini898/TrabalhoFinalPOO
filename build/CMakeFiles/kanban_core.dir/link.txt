@@ -1,0 +1,2 @@
+C:\msys64\mingw64\bin\ar.exe qc libkanban_core.a CMakeFiles/kanban_core.dir/src/ActivityLog.cpp.obj CMakeFiles/kanban_core.dir/src/AssigneeFilter.cpp.obj CMakeFiles/kanban_core.dir/src/Board.cpp.obj CMakeFiles/kanban_core.dir/src/Card.cpp.obj CMakeFiles/kanban_core.dir/src/Column.cpp.obj CMakeFiles/kanban_core.dir/src/JsonSerializer.cpp.obj CMakeFiles/kanban_core.dir/src/TagFilter.cpp.obj CMakeFiles/kanban_core.dir/src/User.cpp.obj
+C:\msys64\mingw64\bin\ranlib.exe libkanban_core.a

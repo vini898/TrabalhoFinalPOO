@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/headers_check.dir/tests/headers_check.cpp.obj"
-  "CMakeFiles/headers_check.dir/tests/headers_check.cpp.obj.d"
+  "CMakeFiles/headers_check.dir/tools/headers_check.cpp.obj"
+  "CMakeFiles/headers_check.dir/tools/headers_check.cpp.obj.d"
   "headers_check.exe"
   "headers_check.exe.manifest"
   "headers_check.pdb"

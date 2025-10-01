@@ -62,11 +62,13 @@ CMAKE_BINARY_DIR = "X:\POO - PROJETO FINAL\build"
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/headers_check.dir/all
+all: CMakeFiles/kanban_core.dir/all
+all: CMakeFiles/kanban_cli.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
-codegen: CMakeFiles/headers_check.dir/codegen
+codegen: CMakeFiles/kanban_core.dir/codegen
+codegen: CMakeFiles/kanban_cli.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -74,9 +76,74 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/kanban_core.dir/clean
+clean: CMakeFiles/kanban_cli.dir/clean
 clean: CMakeFiles/headers_check.dir/clean
-clean: CMakeFiles/verify.dir/clean
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/kanban_core.dir
+
+# All Build rule for target.
+CMakeFiles/kanban_core.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_core.dir\build.make CMakeFiles/kanban_core.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_core.dir\build.make CMakeFiles/kanban_core.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="X:\POO - PROJETO FINAL\build\CMakeFiles" --progress-num=5,6,7,8,9,10,11,12,13 "Built target kanban_core"
+.PHONY : CMakeFiles/kanban_core.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/kanban_core.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "X:\POO - PROJETO FINAL\build\CMakeFiles" 9
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/kanban_core.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "X:\POO - PROJETO FINAL\build\CMakeFiles" 0
+.PHONY : CMakeFiles/kanban_core.dir/rule
+
+# Convenience name for target.
+kanban_core: CMakeFiles/kanban_core.dir/rule
+.PHONY : kanban_core
+
+# codegen rule for target.
+CMakeFiles/kanban_core.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_core.dir\build.make CMakeFiles/kanban_core.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="X:\POO - PROJETO FINAL\build\CMakeFiles" --progress-num=5,6,7,8,9,10,11,12,13 "Finished codegen for target kanban_core"
+.PHONY : CMakeFiles/kanban_core.dir/codegen
+
+# clean rule for target.
+CMakeFiles/kanban_core.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_core.dir\build.make CMakeFiles/kanban_core.dir/clean
+.PHONY : CMakeFiles/kanban_core.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/kanban_cli.dir
+
+# All Build rule for target.
+CMakeFiles/kanban_cli.dir/all: CMakeFiles/kanban_core.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_cli.dir\build.make CMakeFiles/kanban_cli.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_cli.dir\build.make CMakeFiles/kanban_cli.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="X:\POO - PROJETO FINAL\build\CMakeFiles" --progress-num=3,4 "Built target kanban_cli"
+.PHONY : CMakeFiles/kanban_cli.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/kanban_cli.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "X:\POO - PROJETO FINAL\build\CMakeFiles" 11
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/kanban_cli.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "X:\POO - PROJETO FINAL\build\CMakeFiles" 0
+.PHONY : CMakeFiles/kanban_cli.dir/rule
+
+# Convenience name for target.
+kanban_cli: CMakeFiles/kanban_cli.dir/rule
+.PHONY : kanban_cli
+
+# codegen rule for target.
+CMakeFiles/kanban_cli.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_cli.dir\build.make CMakeFiles/kanban_cli.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="X:\POO - PROJETO FINAL\build\CMakeFiles" --progress-num=3,4 "Finished codegen for target kanban_cli"
+.PHONY : CMakeFiles/kanban_cli.dir/codegen
+
+# clean rule for target.
+CMakeFiles/kanban_cli.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_cli.dir\build.make CMakeFiles/kanban_cli.dir/clean
+.PHONY : CMakeFiles/kanban_cli.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/headers_check.dir
@@ -109,38 +176,6 @@ CMakeFiles/headers_check.dir/codegen:
 CMakeFiles/headers_check.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\headers_check.dir\build.make CMakeFiles/headers_check.dir/clean
 .PHONY : CMakeFiles/headers_check.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/verify.dir
-
-# All Build rule for target.
-CMakeFiles/verify.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\verify.dir\build.make CMakeFiles/verify.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\verify.dir\build.make CMakeFiles/verify.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="X:\POO - PROJETO FINAL\build\CMakeFiles" --progress-num=3 "Built target verify"
-.PHONY : CMakeFiles/verify.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/verify.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "X:\POO - PROJETO FINAL\build\CMakeFiles" 1
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/verify.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "X:\POO - PROJETO FINAL\build\CMakeFiles" 0
-.PHONY : CMakeFiles/verify.dir/rule
-
-# Convenience name for target.
-verify: CMakeFiles/verify.dir/rule
-.PHONY : verify
-
-# codegen rule for target.
-CMakeFiles/verify.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\verify.dir\build.make CMakeFiles/verify.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="X:\POO - PROJETO FINAL\build\CMakeFiles" --progress-num=3 "Finished codegen for target verify"
-.PHONY : CMakeFiles/verify.dir/codegen
-
-# clean rule for target.
-CMakeFiles/verify.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\verify.dir\build.make CMakeFiles/verify.dir/clean
-.PHONY : CMakeFiles/verify.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -16,7 +16,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -32,7 +33,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -41,15 +43,22 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "headers_check::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-headers_check-Debug-3091c390ad3d659f9111.json",
+					"jsonFile" : "target-headers_check-Debug-e87b5e4aabcb7d29ebd0.json",
 					"name" : "headers_check",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "verify::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-verify-Debug-38abf5c0abf7354062b0.json",
-					"name" : "verify",
+					"id" : "kanban_cli::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-kanban_cli-Debug-92ea746499ae7f3b30b9.json",
+					"name" : "kanban_cli",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "kanban_core::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-kanban_core-Debug-baa59813cd4088b57738.json",
+					"name" : "kanban_core",
 					"projectIndex" : 0
 				}
 			]

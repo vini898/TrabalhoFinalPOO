@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "X:/POO - PROJETO FINAL/tools/headers_check.cpp" "CMakeFiles/headers_check.dir/tools/headers_check.cpp.obj" "gcc" "CMakeFiles/headers_check.dir/tools/headers_check.cpp.obj.d"
+  "X:/POO - PROJETO FINAL/tools/kanban_cli.cpp" "CMakeFiles/kanban_cli.dir/tools/kanban_cli.cpp.obj" "gcc" "CMakeFiles/kanban_cli.dir/tools/kanban_cli.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

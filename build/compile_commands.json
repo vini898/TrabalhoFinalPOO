@@ -1,8 +1,62 @@
 [
 {
   "directory": "X:/POO - PROJETO FINAL/build",
-  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/headers_check.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\headers_check.dir\\tests\\headers_check.cpp.obj -c \"X:\\POO - PROJETO FINAL\\tests\\headers_check.cpp\"",
-  "file": "X:/POO - PROJETO FINAL/tests/headers_check.cpp",
-  "output": "CMakeFiles/headers_check.dir/tests/headers_check.cpp.obj"
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/kanban_core.dir/includes_CXX.rsp -g -std=c++17 -o CMakeFiles\\kanban_core.dir\\src\\ActivityLog.cpp.obj -c \"X:\\POO - PROJETO FINAL\\src\\ActivityLog.cpp\"",
+  "file": "X:/POO - PROJETO FINAL/src/ActivityLog.cpp",
+  "output": "CMakeFiles/kanban_core.dir/src/ActivityLog.cpp.obj"
+},
+{
+  "directory": "X:/POO - PROJETO FINAL/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/kanban_core.dir/includes_CXX.rsp -g -std=c++17 -o CMakeFiles\\kanban_core.dir\\src\\AssigneeFilter.cpp.obj -c \"X:\\POO - PROJETO FINAL\\src\\AssigneeFilter.cpp\"",
+  "file": "X:/POO - PROJETO FINAL/src/AssigneeFilter.cpp",
+  "output": "CMakeFiles/kanban_core.dir/src/AssigneeFilter.cpp.obj"
+},
+{
+  "directory": "X:/POO - PROJETO FINAL/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/kanban_core.dir/includes_CXX.rsp -g -std=c++17 -o CMakeFiles\\kanban_core.dir\\src\\Board.cpp.obj -c \"X:\\POO - PROJETO FINAL\\src\\Board.cpp\"",
+  "file": "X:/POO - PROJETO FINAL/src/Board.cpp",
+  "output": "CMakeFiles/kanban_core.dir/src/Board.cpp.obj"
+},
+{
+  "directory": "X:/POO - PROJETO FINAL/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/kanban_core.dir/includes_CXX.rsp -g -std=c++17 -o CMakeFiles\\kanban_core.dir\\src\\Card.cpp.obj -c \"X:\\POO - PROJETO FINAL\\src\\Card.cpp\"",
+  "file": "X:/POO - PROJETO FINAL/src/Card.cpp",
+  "output": "CMakeFiles/kanban_core.dir/src/Card.cpp.obj"
+},
+{
+  "directory": "X:/POO - PROJETO FINAL/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/kanban_core.dir/includes_CXX.rsp -g -std=c++17 -o CMakeFiles\\kanban_core.dir\\src\\Column.cpp.obj -c \"X:\\POO - PROJETO FINAL\\src\\Column.cpp\"",
+  "file": "X:/POO - PROJETO FINAL/src/Column.cpp",
+  "output": "CMakeFiles/kanban_core.dir/src/Column.cpp.obj"
+},
+{
+  "directory": "X:/POO - PROJETO FINAL/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/kanban_core.dir/includes_CXX.rsp -g -std=c++17 -o CMakeFiles\\kanban_core.dir\\src\\JsonSerializer.cpp.obj -c \"X:\\POO - PROJETO FINAL\\src\\JsonSerializer.cpp\"",
+  "file": "X:/POO - PROJETO FINAL/src/JsonSerializer.cpp",
+  "output": "CMakeFiles/kanban_core.dir/src/JsonSerializer.cpp.obj"
+},
+{
+  "directory": "X:/POO - PROJETO FINAL/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/kanban_core.dir/includes_CXX.rsp -g -std=c++17 -o CMakeFiles\\kanban_core.dir\\src\\TagFilter.cpp.obj -c \"X:\\POO - PROJETO FINAL\\src\\TagFilter.cpp\"",
+  "file": "X:/POO - PROJETO FINAL/src/TagFilter.cpp",
+  "output": "CMakeFiles/kanban_core.dir/src/TagFilter.cpp.obj"
+},
+{
+  "directory": "X:/POO - PROJETO FINAL/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/kanban_core.dir/includes_CXX.rsp -g -std=c++17 -o CMakeFiles\\kanban_core.dir\\src\\User.cpp.obj -c \"X:\\POO - PROJETO FINAL\\src\\User.cpp\"",
+  "file": "X:/POO - PROJETO FINAL/src/User.cpp",
+  "output": "CMakeFiles/kanban_core.dir/src/User.cpp.obj"
+},
+{
+  "directory": "X:/POO - PROJETO FINAL/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/kanban_cli.dir/includes_CXX.rsp -g -std=c++17 -o CMakeFiles\\kanban_cli.dir\\tools\\kanban_cli.cpp.obj -c \"X:\\POO - PROJETO FINAL\\tools\\kanban_cli.cpp\"",
+  "file": "X:/POO - PROJETO FINAL/tools/kanban_cli.cpp",
+  "output": "CMakeFiles/kanban_cli.dir/tools/kanban_cli.cpp.obj"
+},
+{
+  "directory": "X:/POO - PROJETO FINAL/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/headers_check.dir/includes_CXX.rsp -g -std=c++17 -o CMakeFiles\\headers_check.dir\\tools\\headers_check.cpp.obj -c \"X:\\POO - PROJETO FINAL\\tools\\headers_check.cpp\"",
+  "file": "X:/POO - PROJETO FINAL/tools/headers_check.cpp",
+  "output": "CMakeFiles/headers_check.dir/tools/headers_check.cpp.obj"
 }
 ]

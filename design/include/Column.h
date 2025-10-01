@@ -4,10 +4,9 @@
 #include <vector>
 #include <cstdint>
 #include <optional>
+#include "Card.h"
 
 namespace kanban {
-
-class Card;
 
 /**
  * Column: lista de cartões dentro de um Board.

@@ -1,4 +1,5 @@
+X:/POO - PROJETO FINAL/build/CMakeFiles/kanban_core.dir
+X:/POO - PROJETO FINAL/build/CMakeFiles/kanban_cli.dir
 X:/POO - PROJETO FINAL/build/CMakeFiles/headers_check.dir
-X:/POO - PROJETO FINAL/build/CMakeFiles/verify.dir
 X:/POO - PROJETO FINAL/build/CMakeFiles/edit_cache.dir
 X:/POO - PROJETO FINAL/build/CMakeFiles/rebuild_cache.dir

@@ -116,6 +116,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named kanban_core
+
+# Build rule for target.
+kanban_core: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 kanban_core
+.PHONY : kanban_core
+
+# fast build rule for target.
+kanban_core/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_core.dir\build.make CMakeFiles/kanban_core.dir/build
+.PHONY : kanban_core/fast
+
+#=============================================================================
+# Target rules for targets named kanban_cli
+
+# Build rule for target.
+kanban_cli: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 kanban_cli
+.PHONY : kanban_cli
+
+# fast build rule for target.
+kanban_cli/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_cli.dir\build.make CMakeFiles/kanban_cli.dir/build
+.PHONY : kanban_cli/fast
+
+#=============================================================================
 # Target rules for targets named headers_check
 
 # Build rule for target.
@@ -128,42 +154,245 @@ headers_check/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\headers_check.dir\build.make CMakeFiles/headers_check.dir/build
 .PHONY : headers_check/fast
 
-#=============================================================================
-# Target rules for targets named verify
-
-# Build rule for target.
-verify: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 verify
-.PHONY : verify
-
-# fast build rule for target.
-verify/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\verify.dir\build.make CMakeFiles/verify.dir/build
-.PHONY : verify/fast
-
-tests/headers_check.obj: tests/headers_check.cpp.obj
-.PHONY : tests/headers_check.obj
+src/ActivityLog.obj: src/ActivityLog.cpp.obj
+.PHONY : src/ActivityLog.obj
 
 # target to build an object file
-tests/headers_check.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\headers_check.dir\build.make CMakeFiles/headers_check.dir/tests/headers_check.cpp.obj
-.PHONY : tests/headers_check.cpp.obj
+src/ActivityLog.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_core.dir\build.make CMakeFiles/kanban_core.dir/src/ActivityLog.cpp.obj
+.PHONY : src/ActivityLog.cpp.obj
 
-tests/headers_check.i: tests/headers_check.cpp.i
-.PHONY : tests/headers_check.i
+src/ActivityLog.i: src/ActivityLog.cpp.i
+.PHONY : src/ActivityLog.i
 
 # target to preprocess a source file
-tests/headers_check.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\headers_check.dir\build.make CMakeFiles/headers_check.dir/tests/headers_check.cpp.i
-.PHONY : tests/headers_check.cpp.i
+src/ActivityLog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_core.dir\build.make CMakeFiles/kanban_core.dir/src/ActivityLog.cpp.i
+.PHONY : src/ActivityLog.cpp.i
 
-tests/headers_check.s: tests/headers_check.cpp.s
-.PHONY : tests/headers_check.s
+src/ActivityLog.s: src/ActivityLog.cpp.s
+.PHONY : src/ActivityLog.s
 
 # target to generate assembly for a file
-tests/headers_check.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\headers_check.dir\build.make CMakeFiles/headers_check.dir/tests/headers_check.cpp.s
-.PHONY : tests/headers_check.cpp.s
+src/ActivityLog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_core.dir\build.make CMakeFiles/kanban_core.dir/src/ActivityLog.cpp.s
+.PHONY : src/ActivityLog.cpp.s
+
+src/AssigneeFilter.obj: src/AssigneeFilter.cpp.obj
+.PHONY : src/AssigneeFilter.obj
+
+# target to build an object file
+src/AssigneeFilter.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_core.dir\build.make CMakeFiles/kanban_core.dir/src/AssigneeFilter.cpp.obj
+.PHONY : src/AssigneeFilter.cpp.obj
+
+src/AssigneeFilter.i: src/AssigneeFilter.cpp.i
+.PHONY : src/AssigneeFilter.i
+
+# target to preprocess a source file
+src/AssigneeFilter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_core.dir\build.make CMakeFiles/kanban_core.dir/src/AssigneeFilter.cpp.i
+.PHONY : src/AssigneeFilter.cpp.i
+
+src/AssigneeFilter.s: src/AssigneeFilter.cpp.s
+.PHONY : src/AssigneeFilter.s
+
+# target to generate assembly for a file
+src/AssigneeFilter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_core.dir\build.make CMakeFiles/kanban_core.dir/src/AssigneeFilter.cpp.s
+.PHONY : src/AssigneeFilter.cpp.s
+
+src/Board.obj: src/Board.cpp.obj
+.PHONY : src/Board.obj
+
+# target to build an object file
+src/Board.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_core.dir\build.make CMakeFiles/kanban_core.dir/src/Board.cpp.obj
+.PHONY : src/Board.cpp.obj
+
+src/Board.i: src/Board.cpp.i
+.PHONY : src/Board.i
+
+# target to preprocess a source file
+src/Board.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_core.dir\build.make CMakeFiles/kanban_core.dir/src/Board.cpp.i
+.PHONY : src/Board.cpp.i
+
+src/Board.s: src/Board.cpp.s
+.PHONY : src/Board.s
+
+# target to generate assembly for a file
+src/Board.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_core.dir\build.make CMakeFiles/kanban_core.dir/src/Board.cpp.s
+.PHONY : src/Board.cpp.s
+
+src/Card.obj: src/Card.cpp.obj
+.PHONY : src/Card.obj
+
+# target to build an object file
+src/Card.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_core.dir\build.make CMakeFiles/kanban_core.dir/src/Card.cpp.obj
+.PHONY : src/Card.cpp.obj
+
+src/Card.i: src/Card.cpp.i
+.PHONY : src/Card.i
+
+# target to preprocess a source file
+src/Card.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_core.dir\build.make CMakeFiles/kanban_core.dir/src/Card.cpp.i
+.PHONY : src/Card.cpp.i
+
+src/Card.s: src/Card.cpp.s
+.PHONY : src/Card.s
+
+# target to generate assembly for a file
+src/Card.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_core.dir\build.make CMakeFiles/kanban_core.dir/src/Card.cpp.s
+.PHONY : src/Card.cpp.s
+
+src/Column.obj: src/Column.cpp.obj
+.PHONY : src/Column.obj
+
+# target to build an object file
+src/Column.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_core.dir\build.make CMakeFiles/kanban_core.dir/src/Column.cpp.obj
+.PHONY : src/Column.cpp.obj
+
+src/Column.i: src/Column.cpp.i
+.PHONY : src/Column.i
+
+# target to preprocess a source file
+src/Column.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_core.dir\build.make CMakeFiles/kanban_core.dir/src/Column.cpp.i
+.PHONY : src/Column.cpp.i
+
+src/Column.s: src/Column.cpp.s
+.PHONY : src/Column.s
+
+# target to generate assembly for a file
+src/Column.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_core.dir\build.make CMakeFiles/kanban_core.dir/src/Column.cpp.s
+.PHONY : src/Column.cpp.s
+
+src/JsonSerializer.obj: src/JsonSerializer.cpp.obj
+.PHONY : src/JsonSerializer.obj
+
+# target to build an object file
+src/JsonSerializer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_core.dir\build.make CMakeFiles/kanban_core.dir/src/JsonSerializer.cpp.obj
+.PHONY : src/JsonSerializer.cpp.obj
+
+src/JsonSerializer.i: src/JsonSerializer.cpp.i
+.PHONY : src/JsonSerializer.i
+
+# target to preprocess a source file
+src/JsonSerializer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_core.dir\build.make CMakeFiles/kanban_core.dir/src/JsonSerializer.cpp.i
+.PHONY : src/JsonSerializer.cpp.i
+
+src/JsonSerializer.s: src/JsonSerializer.cpp.s
+.PHONY : src/JsonSerializer.s
+
+# target to generate assembly for a file
+src/JsonSerializer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_core.dir\build.make CMakeFiles/kanban_core.dir/src/JsonSerializer.cpp.s
+.PHONY : src/JsonSerializer.cpp.s
+
+src/TagFilter.obj: src/TagFilter.cpp.obj
+.PHONY : src/TagFilter.obj
+
+# target to build an object file
+src/TagFilter.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_core.dir\build.make CMakeFiles/kanban_core.dir/src/TagFilter.cpp.obj
+.PHONY : src/TagFilter.cpp.obj
+
+src/TagFilter.i: src/TagFilter.cpp.i
+.PHONY : src/TagFilter.i
+
+# target to preprocess a source file
+src/TagFilter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_core.dir\build.make CMakeFiles/kanban_core.dir/src/TagFilter.cpp.i
+.PHONY : src/TagFilter.cpp.i
+
+src/TagFilter.s: src/TagFilter.cpp.s
+.PHONY : src/TagFilter.s
+
+# target to generate assembly for a file
+src/TagFilter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_core.dir\build.make CMakeFiles/kanban_core.dir/src/TagFilter.cpp.s
+.PHONY : src/TagFilter.cpp.s
+
+src/User.obj: src/User.cpp.obj
+.PHONY : src/User.obj
+
+# target to build an object file
+src/User.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_core.dir\build.make CMakeFiles/kanban_core.dir/src/User.cpp.obj
+.PHONY : src/User.cpp.obj
+
+src/User.i: src/User.cpp.i
+.PHONY : src/User.i
+
+# target to preprocess a source file
+src/User.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_core.dir\build.make CMakeFiles/kanban_core.dir/src/User.cpp.i
+.PHONY : src/User.cpp.i
+
+src/User.s: src/User.cpp.s
+.PHONY : src/User.s
+
+# target to generate assembly for a file
+src/User.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_core.dir\build.make CMakeFiles/kanban_core.dir/src/User.cpp.s
+.PHONY : src/User.cpp.s
+
+tools/headers_check.obj: tools/headers_check.cpp.obj
+.PHONY : tools/headers_check.obj
+
+# target to build an object file
+tools/headers_check.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\headers_check.dir\build.make CMakeFiles/headers_check.dir/tools/headers_check.cpp.obj
+.PHONY : tools/headers_check.cpp.obj
+
+tools/headers_check.i: tools/headers_check.cpp.i
+.PHONY : tools/headers_check.i
+
+# target to preprocess a source file
+tools/headers_check.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\headers_check.dir\build.make CMakeFiles/headers_check.dir/tools/headers_check.cpp.i
+.PHONY : tools/headers_check.cpp.i
+
+tools/headers_check.s: tools/headers_check.cpp.s
+.PHONY : tools/headers_check.s
+
+# target to generate assembly for a file
+tools/headers_check.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\headers_check.dir\build.make CMakeFiles/headers_check.dir/tools/headers_check.cpp.s
+.PHONY : tools/headers_check.cpp.s
+
+tools/kanban_cli.obj: tools/kanban_cli.cpp.obj
+.PHONY : tools/kanban_cli.obj
+
+# target to build an object file
+tools/kanban_cli.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_cli.dir\build.make CMakeFiles/kanban_cli.dir/tools/kanban_cli.cpp.obj
+.PHONY : tools/kanban_cli.cpp.obj
+
+tools/kanban_cli.i: tools/kanban_cli.cpp.i
+.PHONY : tools/kanban_cli.i
+
+# target to preprocess a source file
+tools/kanban_cli.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_cli.dir\build.make CMakeFiles/kanban_cli.dir/tools/kanban_cli.cpp.i
+.PHONY : tools/kanban_cli.cpp.i
+
+tools/kanban_cli.s: tools/kanban_cli.cpp.s
+.PHONY : tools/kanban_cli.s
+
+# target to generate assembly for a file
+tools/kanban_cli.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_cli.dir\build.make CMakeFiles/kanban_cli.dir/tools/kanban_cli.cpp.s
+.PHONY : tools/kanban_cli.cpp.s
 
 # Help Target
 help:
@@ -173,11 +402,39 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... verify
 	@echo ... headers_check
-	@echo ... tests/headers_check.obj
-	@echo ... tests/headers_check.i
-	@echo ... tests/headers_check.s
+	@echo ... kanban_cli
+	@echo ... kanban_core
+	@echo ... src/ActivityLog.obj
+	@echo ... src/ActivityLog.i
+	@echo ... src/ActivityLog.s
+	@echo ... src/AssigneeFilter.obj
+	@echo ... src/AssigneeFilter.i
+	@echo ... src/AssigneeFilter.s
+	@echo ... src/Board.obj
+	@echo ... src/Board.i
+	@echo ... src/Board.s
+	@echo ... src/Card.obj
+	@echo ... src/Card.i
+	@echo ... src/Card.s
+	@echo ... src/Column.obj
+	@echo ... src/Column.i
+	@echo ... src/Column.s
+	@echo ... src/JsonSerializer.obj
+	@echo ... src/JsonSerializer.i
+	@echo ... src/JsonSerializer.s
+	@echo ... src/TagFilter.obj
+	@echo ... src/TagFilter.i
+	@echo ... src/TagFilter.s
+	@echo ... src/User.obj
+	@echo ... src/User.i
+	@echo ... src/User.s
+	@echo ... tools/headers_check.obj
+	@echo ... tools/headers_check.i
+	@echo ... tools/headers_check.s
+	@echo ... tools/kanban_cli.obj
+	@echo ... tools/kanban_cli.i
+	@echo ... tools/kanban_cli.s
 .PHONY : help
 
 

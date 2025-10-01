@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ICardFilter.h"
+#include "Card.h"
 #include <cstdint>
 #include <optional>
 

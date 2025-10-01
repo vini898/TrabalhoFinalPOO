@@ -4,7 +4,7 @@
 # compile CXX with C:/msys64/mingw64/bin/g++.exe
 CXX_DEFINES = 
 
-CXX_INCLUDES = @CMakeFiles/headers_check.dir/includes_CXX.rsp
+CXX_INCLUDES = @CMakeFiles/kanban_cli.dir/includes_CXX.rsp
 
 CXX_FLAGS = -g -std=c++17
 

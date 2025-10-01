@@ -5,15 +5,14 @@
 #include <unordered_map>
 #include <optional>
 #include <cstdint>
+#include "Card.h"        // ← ADICIONE ESTE
+#include "Column.h"      // ← ADICIONE ESTE
+#include "User.h"        // ← ADICIONE ESTE
+#include "ActivityLog.h" // ← ADICIONE ESTE
 
 namespace kanban {
 
-class Card;
-class Column;
-class User;
 class ICardFilter;
-class ActivityLog;
-
 /**
  * Board: agrega colunas, cartões e usuários.
  * - Dono da coleção de Cards e Columns (armazenamento por valor na Etapa 2).

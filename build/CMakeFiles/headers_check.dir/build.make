@@ -71,29 +71,29 @@ include CMakeFiles/headers_check.dir/flags.make
 CMakeFiles/headers_check.dir/codegen:
 .PHONY : CMakeFiles/headers_check.dir/codegen
 
-CMakeFiles/headers_check.dir/tests/headers_check.cpp.obj: CMakeFiles/headers_check.dir/flags.make
-CMakeFiles/headers_check.dir/tests/headers_check.cpp.obj: CMakeFiles/headers_check.dir/includes_CXX.rsp
-CMakeFiles/headers_check.dir/tests/headers_check.cpp.obj: X:/POO\ -\ PROJETO\ FINAL/tests/headers_check.cpp
-CMakeFiles/headers_check.dir/tests/headers_check.cpp.obj: CMakeFiles/headers_check.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="X:\POO - PROJETO FINAL\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/headers_check.dir/tests/headers_check.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/headers_check.dir/tests/headers_check.cpp.obj -MF CMakeFiles\headers_check.dir\tests\headers_check.cpp.obj.d -o CMakeFiles\headers_check.dir\tests\headers_check.cpp.obj -c "X:\POO - PROJETO FINAL\tests\headers_check.cpp"
+CMakeFiles/headers_check.dir/tools/headers_check.cpp.obj: CMakeFiles/headers_check.dir/flags.make
+CMakeFiles/headers_check.dir/tools/headers_check.cpp.obj: CMakeFiles/headers_check.dir/includes_CXX.rsp
+CMakeFiles/headers_check.dir/tools/headers_check.cpp.obj: X:/POO\ -\ PROJETO\ FINAL/tools/headers_check.cpp
+CMakeFiles/headers_check.dir/tools/headers_check.cpp.obj: CMakeFiles/headers_check.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="X:\POO - PROJETO FINAL\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/headers_check.dir/tools/headers_check.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/headers_check.dir/tools/headers_check.cpp.obj -MF CMakeFiles\headers_check.dir\tools\headers_check.cpp.obj.d -o CMakeFiles\headers_check.dir\tools\headers_check.cpp.obj -c "X:\POO - PROJETO FINAL\tools\headers_check.cpp"
 
-CMakeFiles/headers_check.dir/tests/headers_check.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/headers_check.dir/tests/headers_check.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "X:\POO - PROJETO FINAL\tests\headers_check.cpp" > CMakeFiles\headers_check.dir\tests\headers_check.cpp.i
+CMakeFiles/headers_check.dir/tools/headers_check.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/headers_check.dir/tools/headers_check.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "X:\POO - PROJETO FINAL\tools\headers_check.cpp" > CMakeFiles\headers_check.dir\tools\headers_check.cpp.i
 
-CMakeFiles/headers_check.dir/tests/headers_check.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/headers_check.dir/tests/headers_check.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "X:\POO - PROJETO FINAL\tests\headers_check.cpp" -o CMakeFiles\headers_check.dir\tests\headers_check.cpp.s
+CMakeFiles/headers_check.dir/tools/headers_check.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/headers_check.dir/tools/headers_check.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "X:\POO - PROJETO FINAL\tools\headers_check.cpp" -o CMakeFiles\headers_check.dir\tools\headers_check.cpp.s
 
 # Object files for target headers_check
 headers_check_OBJECTS = \
-"CMakeFiles/headers_check.dir/tests/headers_check.cpp.obj"
+"CMakeFiles/headers_check.dir/tools/headers_check.cpp.obj"
 
 # External object files for target headers_check
 headers_check_EXTERNAL_OBJECTS =
 
-headers_check.exe: CMakeFiles/headers_check.dir/tests/headers_check.cpp.obj
+headers_check.exe: CMakeFiles/headers_check.dir/tools/headers_check.cpp.obj
 headers_check.exe: CMakeFiles/headers_check.dir/build.make
 headers_check.exe: CMakeFiles/headers_check.dir/linkLibs.rsp
 headers_check.exe: CMakeFiles/headers_check.dir/objects1.rsp
