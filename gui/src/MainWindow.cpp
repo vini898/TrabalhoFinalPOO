@@ -2,13 +2,14 @@
 
 MainWindow::MainWindow(QWidget* parent) 
     : QMainWindow(parent),
-      m_board(1, "Meu Quadro Kanban"),  // ← INICIALIZE O BOARD AQUI!
+      m_board(1, "Meu Quadro Kanban"),
       m_newBoardAction(nullptr),
       m_openBoardAction(nullptr),
       m_saveBoardAction(nullptr),
       m_exitAction(nullptr),
       m_aboutAction(nullptr)
 {
+    setupDemoData();  // Agora está declarada!
     setupUI();
     setupMenus();
     setupConnections();
@@ -16,10 +17,36 @@ MainWindow::MainWindow(QWidget* parent)
     statusBar()->showMessage("Pronto - Kanban Lite");
 }
 
+void MainWindow::setupDemoData() {
+    // Adicionar colunas se estiver vazio
+    if (m_board.columns().empty()) {
+        m_board.addColumn("To Do", 0);
+        m_board.addColumn("Doing", 1);
+        m_board.addColumn("Done", 2);
+        
+        // Adicionar usuário demo
+        m_board.addUser(kanban::User(1, "João", "joao@email.com"));
+        
+        // Adicionar cartão demo
+        auto& card = m_board.createCard("Tarefa de Exemplo");
+        card.setDescription("Esta é uma tarefa de demonstração");
+        card.setAssigneeId(1);
+        card.addTag("urgente");
+        
+        // Adicionar à primeira coluna
+        if (auto* firstColumn = m_board.findColumn(1)) {
+            firstColumn->addCard(card.id());
+        }
+    }
+}
+
 void MainWindow::setupUI() {
     setWindowTitle("Kanban Lite");
-    setMinimumSize(800, 600);
-    setCentralWidget(new QWidget(this));
+    setMinimumSize(1000, 700);
+    
+    // Central widget com BoardWidget
+    BoardWidget* boardWidget = new BoardWidget(m_board, this);
+    setCentralWidget(boardWidget);
 }
 
 void MainWindow::setupMenus() {

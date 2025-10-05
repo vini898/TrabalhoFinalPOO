@@ -141,6 +141,30 @@ kanban_gui/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_gui.dir\build.make CMakeFiles/kanban_gui.dir/build
 .PHONY : kanban_gui/fast
 
+gui/include/moc_BoardWidget.obj: gui/include/moc_BoardWidget.cpp.obj
+.PHONY : gui/include/moc_BoardWidget.obj
+
+# target to build an object file
+gui/include/moc_BoardWidget.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_gui.dir\build.make CMakeFiles/kanban_gui.dir/gui/include/moc_BoardWidget.cpp.obj
+.PHONY : gui/include/moc_BoardWidget.cpp.obj
+
+gui/include/moc_BoardWidget.i: gui/include/moc_BoardWidget.cpp.i
+.PHONY : gui/include/moc_BoardWidget.i
+
+# target to preprocess a source file
+gui/include/moc_BoardWidget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_gui.dir\build.make CMakeFiles/kanban_gui.dir/gui/include/moc_BoardWidget.cpp.i
+.PHONY : gui/include/moc_BoardWidget.cpp.i
+
+gui/include/moc_BoardWidget.s: gui/include/moc_BoardWidget.cpp.s
+.PHONY : gui/include/moc_BoardWidget.s
+
+# target to generate assembly for a file
+gui/include/moc_BoardWidget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_gui.dir\build.make CMakeFiles/kanban_gui.dir/gui/include/moc_BoardWidget.cpp.s
+.PHONY : gui/include/moc_BoardWidget.cpp.s
+
 gui/include/moc_MainWindow.obj: gui/include/moc_MainWindow.cpp.obj
 .PHONY : gui/include/moc_MainWindow.obj
 
@@ -164,6 +188,30 @@ gui/include/moc_MainWindow.s: gui/include/moc_MainWindow.cpp.s
 gui/include/moc_MainWindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_gui.dir\build.make CMakeFiles/kanban_gui.dir/gui/include/moc_MainWindow.cpp.s
 .PHONY : gui/include/moc_MainWindow.cpp.s
+
+gui/src/BoardWidget.obj: gui/src/BoardWidget.cpp.obj
+.PHONY : gui/src/BoardWidget.obj
+
+# target to build an object file
+gui/src/BoardWidget.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_gui.dir\build.make CMakeFiles/kanban_gui.dir/gui/src/BoardWidget.cpp.obj
+.PHONY : gui/src/BoardWidget.cpp.obj
+
+gui/src/BoardWidget.i: gui/src/BoardWidget.cpp.i
+.PHONY : gui/src/BoardWidget.i
+
+# target to preprocess a source file
+gui/src/BoardWidget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_gui.dir\build.make CMakeFiles/kanban_gui.dir/gui/src/BoardWidget.cpp.i
+.PHONY : gui/src/BoardWidget.cpp.i
+
+gui/src/BoardWidget.s: gui/src/BoardWidget.cpp.s
+.PHONY : gui/src/BoardWidget.s
+
+# target to generate assembly for a file
+gui/src/BoardWidget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_gui.dir\build.make CMakeFiles/kanban_gui.dir/gui/src/BoardWidget.cpp.s
+.PHONY : gui/src/BoardWidget.cpp.s
 
 gui/src/MainWindow.obj: gui/src/MainWindow.cpp.obj
 .PHONY : gui/src/MainWindow.obj
@@ -415,9 +463,15 @@ help:
 	@echo ... rebuild_cache
 	@echo ... kanban_core
 	@echo ... kanban_gui
+	@echo ... gui/include/moc_BoardWidget.obj
+	@echo ... gui/include/moc_BoardWidget.i
+	@echo ... gui/include/moc_BoardWidget.s
 	@echo ... gui/include/moc_MainWindow.obj
 	@echo ... gui/include/moc_MainWindow.i
 	@echo ... gui/include/moc_MainWindow.s
+	@echo ... gui/src/BoardWidget.obj
+	@echo ... gui/src/BoardWidget.i
+	@echo ... gui/src/BoardWidget.s
 	@echo ... gui/src/MainWindow.obj
 	@echo ... gui/src/MainWindow.i
 	@echo ... gui/src/MainWindow.s

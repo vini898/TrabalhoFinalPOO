@@ -43,11 +43,13 @@ file(MAKE_DIRECTORY ${CMAKE_SOURCE_DIR}/gui/include)
 # GUI Qt - usar qt6_wrap_cpp para o MOC
 set(GUI_HEADERS
     ${CMAKE_SOURCE_DIR}/gui/include/MainWindow.h
+    ${CMAKE_SOURCE_DIR}/gui/include/BoardWidget.h
 )
 
 set(GUI_SOURCES
     ${CMAKE_SOURCE_DIR}/gui/src/main.cpp
     ${CMAKE_SOURCE_DIR}/gui/src/MainWindow.cpp
+    ${CMAKE_SOURCE_DIR}/gui/src/BoardWidget.cpp
 )
 
 # Processar headers para MOC

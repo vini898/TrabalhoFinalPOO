@@ -9,6 +9,7 @@
 #include <QMenu>
 #include <QApplication>
 #include <QFileDialog>
+#include "BoardWidget.h"
 #include "../../design/include/Board.h"
 
 class MainWindow : public QMainWindow
@@ -19,7 +20,7 @@ public:
     MainWindow(QWidget* parent = nullptr);
     ~MainWindow() = default;
 
-    // Métodos públicos em vez de slots por enquanto
+    // Métodos públicos
     void onNewBoard();
     void onOpenBoard();
     void onSaveBoard();
@@ -29,6 +30,7 @@ private:
     void setupUI();
     void setupMenus();
     void setupConnections();
+    void setupDemoData(); 
 
     kanban::Board m_board;
     

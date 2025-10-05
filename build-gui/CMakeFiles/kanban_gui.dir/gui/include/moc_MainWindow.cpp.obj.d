@@ -459,6 +459,13 @@ CMakeFiles/kanban_gui.dir/gui/include/moc_MainWindow.cpp.obj: \
  C:/Qt/6.9.3/mingw_64/include/QtCore/qfileinfo.h \
  C:/Qt/6.9.3/mingw_64/include/QtCore/qtimezone.h \
  C:/Qt/6.9.3/mingw_64/include/QtCore/qurl.h \
+ X:/POO\ -\ PROJETO\ FINAL/gui/include/BoardWidget.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/QWidget \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qwidget.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/QScrollArea \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qscrollarea.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qframe.h \
  X:/POO\ -\ PROJETO\ FINAL/design/include/Board.h \
  X:/POO\ -\ PROJETO\ FINAL/design/include/Card.h \
  X:/POO\ -\ PROJETO\ FINAL/design/include/Column.h \
