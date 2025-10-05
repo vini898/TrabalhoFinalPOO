@@ -1,0 +1,5 @@
+set(__QT_DEPLOY_TARGET_kanban_core_FILE X:/POO - PROJETO FINAL/build-gui/libkanban_core.a)
+set(__QT_DEPLOY_TARGET_kanban_core_TYPE STATIC_LIBRARY)
+set(__QT_DEPLOY_TARGET_kanban_gui_FILE X:/POO - PROJETO FINAL/build-gui/kanban_gui.exe)
+set(__QT_DEPLOY_TARGET_kanban_gui_TYPE EXECUTABLE)
+set(__QT_DEPLOY_TARGET_kanban_gui_RUNTIME_DLLS C:/Qt/6.9.3/mingw_64/bin/Qt6Widgets.dll;C:/Qt/6.9.3/mingw_64/bin/Qt6Gui.dll;C:/Qt/6.9.3/mingw_64/bin/Qt6Core.dll)

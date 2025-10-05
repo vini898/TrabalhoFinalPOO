@@ -1,0 +1,4 @@
+X:/POO - PROJETO FINAL/build-gui/CMakeFiles/kanban_core.dir
+X:/POO - PROJETO FINAL/build-gui/CMakeFiles/kanban_gui.dir
+X:/POO - PROJETO FINAL/build-gui/CMakeFiles/edit_cache.dir
+X:/POO - PROJETO FINAL/build-gui/CMakeFiles/rebuild_cache.dir

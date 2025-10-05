@@ -242,6 +242,9 @@ KanbanLite_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 KanbanLite_SOURCE_DIR:STATIC=X:/POO - PROJETO FINAL
 
+//The directory containing a CMake configuration file for Qt6.
+Qt6_DIR:PATH=Qt6_DIR-NOTFOUND
+
 
 ########################
 # INTERNAL cache entries

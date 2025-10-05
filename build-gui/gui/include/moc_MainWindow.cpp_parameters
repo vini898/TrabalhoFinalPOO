@@ -1,0 +1,5 @@
+-DWIN32
+-o
+X:/POO - PROJETO FINAL/build-gui/gui/include/moc_MainWindow.cpp
+X:/POO - PROJETO FINAL/gui/include/MainWindow.h
+-DWIN32

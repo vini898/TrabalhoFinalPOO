@@ -5,13 +5,19 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+# Find Qt6 - versão específica que você tem
+find_package(Qt6 REQUIRED COMPONENTS Core Widgets)
+
+# Incluir módulos Qt necessários
+set(QT_LIBS Qt6::Core Qt6::Widgets)
+
 # Include público dos headers da etapa 1
 add_library(kanban INTERFACE)
 target_include_directories(kanban INTERFACE
     ${CMAKE_SOURCE_DIR}/design/include
 )
 
-# Core (implementações da etapa 2)
+# Core library (implementações da etapa 2)
 file(GLOB KANBAN_CORE_SOURCES
     ${CMAKE_SOURCE_DIR}/src/Board.cpp
     ${CMAKE_SOURCE_DIR}/src/Column.cpp
@@ -21,7 +27,6 @@ file(GLOB KANBAN_CORE_SOURCES
     ${CMAKE_SOURCE_DIR}/src/TagFilter.cpp
     ${CMAKE_SOURCE_DIR}/src/AssigneeFilter.cpp
     ${CMAKE_SOURCE_DIR}/src/JsonSerializer.cpp
-    # IView.cpp é opcional por enquanto (interface pura)
 )
 
 add_library(kanban_core STATIC ${KANBAN_CORE_SOURCES})
@@ -30,10 +35,41 @@ target_include_directories(kanban_core PUBLIC
 )
 target_link_libraries(kanban_core PUBLIC kanban)
 
-# Executável CLI mínimo para teste manual
-add_executable(kanban_cli ${CMAKE_SOURCE_DIR}/tools/kanban_cli.cpp)
-target_link_libraries(kanban_cli PRIVATE kanban_core)
+# Criar pasta gui se não existir
+file(MAKE_DIRECTORY ${CMAKE_SOURCE_DIR}/gui/src)
+file(MAKE_DIRECTORY ${CMAKE_SOURCE_DIR}/gui/include)
 
-# Alvo de verificação de headers (com stub .cpp para Windows)
-add_executable(headers_check EXCLUDE_FROM_ALL ${CMAKE_SOURCE_DIR}/tools/headers_check.cpp)
-target_include_directories(headers_check PRIVATE ${CMAKE_SOURCE_DIR}/design/include)
+# GUI Qt - vamos criar estes arquivos
+# GUI Qt - usar qt6_wrap_cpp para o MOC
+set(GUI_HEADERS
+    ${CMAKE_SOURCE_DIR}/gui/include/MainWindow.h
+)
+
+set(GUI_SOURCES
+    ${CMAKE_SOURCE_DIR}/gui/src/main.cpp
+    ${CMAKE_SOURCE_DIR}/gui/src/MainWindow.cpp
+)
+
+# Processar headers para MOC
+qt6_wrap_cpp(GUI_MOC_SOURCES ${GUI_HEADERS})
+
+# Executável GUI Qt
+add_executable(kanban_gui 
+    ${GUI_SOURCES}
+    ${GUI_HEADERS}
+    ${GUI_MOC_SOURCES}
+)
+
+target_include_directories(kanban_gui PRIVATE 
+    ${CMAKE_SOURCE_DIR}/gui/include
+    ${CMAKE_SOURCE_DIR}/design/include
+)
+
+target_link_libraries(kanban_gui PRIVATE 
+    kanban_core 
+    Qt6::Core 
+    Qt6::Widgets
+)
+
+# Configurações específicas do Qt
+target_compile_definitions(kanban_gui PRIVATE QT_NO_KEYWORDS)
