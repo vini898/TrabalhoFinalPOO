@@ -1,8 +1,8 @@
-CMakeFiles/kanban_gui.dir/gui/include/moc_BoardWidget.cpp.obj: \
- X:\POO\ -\ PROJETO\ FINAL\build-gui\gui\include\moc_BoardWidget.cpp \
- X:/POO\ -\ PROJETO\ FINAL/gui/include/BoardWidget.h \
- C:/Qt/6.9.3/mingw_64/include/QtWidgets/QWidget \
- C:/Qt/6.9.3/mingw_64/include/QtWidgets/qwidget.h \
+CMakeFiles/kanban_gui.dir/gui/include/moc_CardDialog.cpp.obj: \
+ X:\POO\ -\ PROJETO\ FINAL\build-gui\gui\include\moc_CardDialog.cpp \
+ X:/POO\ -\ PROJETO\ FINAL/gui/include/CardDialog.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/QDialog \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qdialog.h \
  C:/Qt/6.9.3/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
  C:/Qt/6.9.3/mingw_64/include/QtGui/qtguiglobal.h \
  C:/Qt/6.9.3/mingw_64/include/QtCore/qglobal.h \
@@ -155,6 +155,7 @@ CMakeFiles/kanban_gui.dir/gui/include/moc_BoardWidget.cpp.obj: \
  C:/Qt/6.9.3/mingw_64/include/QtGui/qtguiexports.h \
  C:/Qt/6.9.3/mingw_64/include/QtWidgets/qtwidgets-config.h \
  C:/Qt/6.9.3/mingw_64/include/QtWidgets/qtwidgetsexports.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qwidget.h \
  C:/Qt/6.9.3/mingw_64/include/QtGui/qwindowdefs.h \
  C:/Qt/6.9.3/mingw_64/include/QtCore/qobjectdefs.h \
  C:/Qt/6.9.3/mingw_64/include/QtCore/qnamespace.h \
@@ -381,54 +382,40 @@ CMakeFiles/kanban_gui.dir/gui/include/moc_BoardWidget.cpp.obj: \
  C:/Qt/6.9.3/mingw_64/include/QtWidgets/qsizepolicy.h \
  C:/Qt/6.9.3/mingw_64/include/QtGui/qcursor.h \
  C:/Qt/6.9.3/mingw_64/include/QtGui/qbitmap.h \
- C:/Qt/6.9.3/mingw_64/include/QtWidgets/QHBoxLayout \
- C:/Qt/6.9.3/mingw_64/include/QtWidgets/qboxlayout.h \
- C:/Qt/6.9.3/mingw_64/include/QtWidgets/qlayout.h \
- C:/Qt/6.9.3/mingw_64/include/QtWidgets/qlayoutitem.h \
- C:/Qt/6.9.3/mingw_64/include/QtWidgets/qboxlayout.h \
- C:/Qt/6.9.3/mingw_64/include/QtWidgets/qgridlayout.h \
- C:/Qt/6.9.3/mingw_64/include/QtWidgets/QScrollArea \
- C:/Qt/6.9.3/mingw_64/include/QtWidgets/qscrollarea.h \
- C:/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/QLineEdit \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qlineedit.h \
  C:/Qt/6.9.3/mingw_64/include/QtWidgets/qframe.h \
- C:/Qt/6.9.3/mingw_64/include/QtWidgets/qwidget.h \
- C:/Qt/6.9.3/mingw_64/include/QtGui/QDropEvent \
- C:/Qt/6.9.3/mingw_64/include/QtGui/qevent.h \
- C:/Qt/6.9.3/mingw_64/include/QtCore/qcoreevent.h \
- C:/Qt/6.9.3/mingw_64/include/QtCore/qbasictimer.h \
- C:/Qt/6.9.3/mingw_64/include/QtCore/qabstracteventdispatcher.h \
- C:/Qt/6.9.3/mingw_64/include/QtCore/qeventloop.h \
- C:/Qt/6.9.3/mingw_64/include/QtCore/qdeadlinetimer.h \
- C:/Qt/6.9.3/mingw_64/include/QtCore/qelapsedtimer.h \
- C:/Qt/6.9.3/mingw_64/include/QtCore/qiodevice.h \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qtextcursor.h \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qtextdocument.h \
  C:/Qt/6.9.3/mingw_64/include/QtCore/qurl.h \
- C:/Qt/6.9.3/mingw_64/include/QtGui/qeventpoint.h \
- C:/Qt/6.9.3/mingw_64/include/QtGui/qvector2d.h \
- C:/Qt/6.9.3/mingw_64/include/QtGui/qvectornd.h \
- C:/Qt/6.9.3/mingw_64/include/QtGui/qpointingdevice.h \
- C:/Qt/6.9.3/mingw_64/include/QtGui/qinputdevice.h \
- C:/Qt/6.9.3/mingw_64/include/QtGui/qscreen.h \
- C:/Qt/6.9.3/mingw_64/include/QtCore/QList \
- C:/Qt/6.9.3/mingw_64/include/QtCore/qlist.h \
- C:/Qt/6.9.3/mingw_64/include/QtCore/QObject \
- C:/Qt/6.9.3/mingw_64/include/QtCore/qobject.h \
- C:/Qt/6.9.3/mingw_64/include/QtCore/QRect \
- C:/Qt/6.9.3/mingw_64/include/QtCore/qrect.h \
- C:/Qt/6.9.3/mingw_64/include/QtCore/QSize \
- C:/Qt/6.9.3/mingw_64/include/QtCore/qsize.h \
- C:/Qt/6.9.3/mingw_64/include/QtCore/QSizeF \
- C:/Qt/6.9.3/mingw_64/include/QtGui/QTransform \
- C:/Qt/6.9.3/mingw_64/include/QtGui/qtransform.h \
- C:/Qt/6.9.3/mingw_64/include/QtCore/qnativeinterface.h \
- C:/Qt/6.9.3/mingw_64/include/QtGui/qscreen_platform.h \
- C:/Qt/6.9.3/mingw_64/include/QtGui/qguiapplication.h \
- C:/Qt/6.9.3/mingw_64/include/QtCore/qcoreapplication.h \
- C:/Qt/6.9.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
- C:/Qt/6.9.3/mingw_64/include/QtGui/qinputmethod.h \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qtextformat.h \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qpen.h \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qtextoption.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/QTextEdit \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qtextedit.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/QComboBox \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qcombobox.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qstyleoption.h \
  C:/Qt/6.9.3/mingw_64/include/QtCore/qlocale.h \
- C:/Qt/6.9.3/mingw_64/include/QtGui/qguiapplication_platform.h \
- C:/Qt/6.9.3/mingw_64/include/QtGui/QDragEnterEvent \
- C:/Qt/6.9.3/mingw_64/include/QtGui/QDragMoveEvent \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractspinbox.h \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qvalidator.h \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/qregularexpression.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qslider.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractslider.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qstyle.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qtabbar.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qtabwidget.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qrubberband.h \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/qabstractitemmodel.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/QListWidget \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qlistwidget.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qlistview.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractitemview.h \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/qitemselectionmodel.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/QDialogButtonBox \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
  X:/POO\ -\ PROJETO\ FINAL/design/include/Board.h \
  X:/POO\ -\ PROJETO\ FINAL/design/include/Card.h \
  X:/POO\ -\ PROJETO\ FINAL/design/include/Column.h \

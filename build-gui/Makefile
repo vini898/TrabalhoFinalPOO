@@ -165,6 +165,54 @@ gui/include/moc_BoardWidget.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_gui.dir\build.make CMakeFiles/kanban_gui.dir/gui/include/moc_BoardWidget.cpp.s
 .PHONY : gui/include/moc_BoardWidget.cpp.s
 
+gui/include/moc_CardDialog.obj: gui/include/moc_CardDialog.cpp.obj
+.PHONY : gui/include/moc_CardDialog.obj
+
+# target to build an object file
+gui/include/moc_CardDialog.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_gui.dir\build.make CMakeFiles/kanban_gui.dir/gui/include/moc_CardDialog.cpp.obj
+.PHONY : gui/include/moc_CardDialog.cpp.obj
+
+gui/include/moc_CardDialog.i: gui/include/moc_CardDialog.cpp.i
+.PHONY : gui/include/moc_CardDialog.i
+
+# target to preprocess a source file
+gui/include/moc_CardDialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_gui.dir\build.make CMakeFiles/kanban_gui.dir/gui/include/moc_CardDialog.cpp.i
+.PHONY : gui/include/moc_CardDialog.cpp.i
+
+gui/include/moc_CardDialog.s: gui/include/moc_CardDialog.cpp.s
+.PHONY : gui/include/moc_CardDialog.s
+
+# target to generate assembly for a file
+gui/include/moc_CardDialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_gui.dir\build.make CMakeFiles/kanban_gui.dir/gui/include/moc_CardDialog.cpp.s
+.PHONY : gui/include/moc_CardDialog.cpp.s
+
+gui/include/moc_CardWidget.obj: gui/include/moc_CardWidget.cpp.obj
+.PHONY : gui/include/moc_CardWidget.obj
+
+# target to build an object file
+gui/include/moc_CardWidget.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_gui.dir\build.make CMakeFiles/kanban_gui.dir/gui/include/moc_CardWidget.cpp.obj
+.PHONY : gui/include/moc_CardWidget.cpp.obj
+
+gui/include/moc_CardWidget.i: gui/include/moc_CardWidget.cpp.i
+.PHONY : gui/include/moc_CardWidget.i
+
+# target to preprocess a source file
+gui/include/moc_CardWidget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_gui.dir\build.make CMakeFiles/kanban_gui.dir/gui/include/moc_CardWidget.cpp.i
+.PHONY : gui/include/moc_CardWidget.cpp.i
+
+gui/include/moc_CardWidget.s: gui/include/moc_CardWidget.cpp.s
+.PHONY : gui/include/moc_CardWidget.s
+
+# target to generate assembly for a file
+gui/include/moc_CardWidget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_gui.dir\build.make CMakeFiles/kanban_gui.dir/gui/include/moc_CardWidget.cpp.s
+.PHONY : gui/include/moc_CardWidget.cpp.s
+
 gui/include/moc_MainWindow.obj: gui/include/moc_MainWindow.cpp.obj
 .PHONY : gui/include/moc_MainWindow.obj
 
@@ -212,6 +260,54 @@ gui/src/BoardWidget.s: gui/src/BoardWidget.cpp.s
 gui/src/BoardWidget.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_gui.dir\build.make CMakeFiles/kanban_gui.dir/gui/src/BoardWidget.cpp.s
 .PHONY : gui/src/BoardWidget.cpp.s
+
+gui/src/CardDialog.obj: gui/src/CardDialog.cpp.obj
+.PHONY : gui/src/CardDialog.obj
+
+# target to build an object file
+gui/src/CardDialog.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_gui.dir\build.make CMakeFiles/kanban_gui.dir/gui/src/CardDialog.cpp.obj
+.PHONY : gui/src/CardDialog.cpp.obj
+
+gui/src/CardDialog.i: gui/src/CardDialog.cpp.i
+.PHONY : gui/src/CardDialog.i
+
+# target to preprocess a source file
+gui/src/CardDialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_gui.dir\build.make CMakeFiles/kanban_gui.dir/gui/src/CardDialog.cpp.i
+.PHONY : gui/src/CardDialog.cpp.i
+
+gui/src/CardDialog.s: gui/src/CardDialog.cpp.s
+.PHONY : gui/src/CardDialog.s
+
+# target to generate assembly for a file
+gui/src/CardDialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_gui.dir\build.make CMakeFiles/kanban_gui.dir/gui/src/CardDialog.cpp.s
+.PHONY : gui/src/CardDialog.cpp.s
+
+gui/src/CardWidget.obj: gui/src/CardWidget.cpp.obj
+.PHONY : gui/src/CardWidget.obj
+
+# target to build an object file
+gui/src/CardWidget.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_gui.dir\build.make CMakeFiles/kanban_gui.dir/gui/src/CardWidget.cpp.obj
+.PHONY : gui/src/CardWidget.cpp.obj
+
+gui/src/CardWidget.i: gui/src/CardWidget.cpp.i
+.PHONY : gui/src/CardWidget.i
+
+# target to preprocess a source file
+gui/src/CardWidget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_gui.dir\build.make CMakeFiles/kanban_gui.dir/gui/src/CardWidget.cpp.i
+.PHONY : gui/src/CardWidget.cpp.i
+
+gui/src/CardWidget.s: gui/src/CardWidget.cpp.s
+.PHONY : gui/src/CardWidget.s
+
+# target to generate assembly for a file
+gui/src/CardWidget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kanban_gui.dir\build.make CMakeFiles/kanban_gui.dir/gui/src/CardWidget.cpp.s
+.PHONY : gui/src/CardWidget.cpp.s
 
 gui/src/MainWindow.obj: gui/src/MainWindow.cpp.obj
 .PHONY : gui/src/MainWindow.obj
@@ -466,12 +562,24 @@ help:
 	@echo ... gui/include/moc_BoardWidget.obj
 	@echo ... gui/include/moc_BoardWidget.i
 	@echo ... gui/include/moc_BoardWidget.s
+	@echo ... gui/include/moc_CardDialog.obj
+	@echo ... gui/include/moc_CardDialog.i
+	@echo ... gui/include/moc_CardDialog.s
+	@echo ... gui/include/moc_CardWidget.obj
+	@echo ... gui/include/moc_CardWidget.i
+	@echo ... gui/include/moc_CardWidget.s
 	@echo ... gui/include/moc_MainWindow.obj
 	@echo ... gui/include/moc_MainWindow.i
 	@echo ... gui/include/moc_MainWindow.s
 	@echo ... gui/src/BoardWidget.obj
 	@echo ... gui/src/BoardWidget.i
 	@echo ... gui/src/BoardWidget.s
+	@echo ... gui/src/CardDialog.obj
+	@echo ... gui/src/CardDialog.i
+	@echo ... gui/src/CardDialog.s
+	@echo ... gui/src/CardWidget.obj
+	@echo ... gui/src/CardWidget.i
+	@echo ... gui/src/CardWidget.s
 	@echo ... gui/src/MainWindow.obj
 	@echo ... gui/src/MainWindow.i
 	@echo ... gui/src/MainWindow.s

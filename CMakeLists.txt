@@ -44,12 +44,16 @@ file(MAKE_DIRECTORY ${CMAKE_SOURCE_DIR}/gui/include)
 set(GUI_HEADERS
     ${CMAKE_SOURCE_DIR}/gui/include/MainWindow.h
     ${CMAKE_SOURCE_DIR}/gui/include/BoardWidget.h
+    ${CMAKE_SOURCE_DIR}/gui/include/CardWidget.h
+    ${CMAKE_SOURCE_DIR}/gui/include/CardDialog.h
 )
 
 set(GUI_SOURCES
     ${CMAKE_SOURCE_DIR}/gui/src/main.cpp
     ${CMAKE_SOURCE_DIR}/gui/src/MainWindow.cpp
     ${CMAKE_SOURCE_DIR}/gui/src/BoardWidget.cpp
+    ${CMAKE_SOURCE_DIR}/gui/src/CardWidget.cpp 
+    ${CMAKE_SOURCE_DIR}/gui/src/CardDialog.cpp
 )
 
 # Processar headers para MOC

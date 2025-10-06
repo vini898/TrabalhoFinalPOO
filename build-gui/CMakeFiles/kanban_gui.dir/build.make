@@ -76,6 +76,14 @@ gui/include/moc_BoardWidget.cpp: X:/POO\ -\ PROJETO\ FINAL/gui/include/BoardWidg
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="X:\POO - PROJETO FINAL\build-gui\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Generating gui/include/moc_BoardWidget.cpp"
 	cd /d "X:\POO - PROJETO FINAL\build-gui\gui\include" && C:\Qt\6.9.3\mingw_64\bin\moc.exe "@X:/POO - PROJETO FINAL/build-gui/gui/include/moc_BoardWidget.cpp_parameters"
 
+gui/include/moc_CardWidget.cpp: X:/POO\ -\ PROJETO\ FINAL/gui/include/CardWidget.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="X:\POO - PROJETO FINAL\build-gui\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Generating gui/include/moc_CardWidget.cpp"
+	cd /d "X:\POO - PROJETO FINAL\build-gui\gui\include" && C:\Qt\6.9.3\mingw_64\bin\moc.exe "@X:/POO - PROJETO FINAL/build-gui/gui/include/moc_CardWidget.cpp_parameters"
+
+gui/include/moc_CardDialog.cpp: X:/POO\ -\ PROJETO\ FINAL/gui/include/CardDialog.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="X:\POO - PROJETO FINAL\build-gui\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Generating gui/include/moc_CardDialog.cpp"
+	cd /d "X:\POO - PROJETO FINAL\build-gui\gui\include" && C:\Qt\6.9.3\mingw_64\bin\moc.exe "@X:/POO - PROJETO FINAL/build-gui/gui/include/moc_CardDialog.cpp_parameters"
+
 CMakeFiles/kanban_gui.dir/codegen:
 .PHONY : CMakeFiles/kanban_gui.dir/codegen
 
@@ -83,7 +91,7 @@ CMakeFiles/kanban_gui.dir/gui/src/main.cpp.obj: CMakeFiles/kanban_gui.dir/flags.
 CMakeFiles/kanban_gui.dir/gui/src/main.cpp.obj: CMakeFiles/kanban_gui.dir/includes_CXX.rsp
 CMakeFiles/kanban_gui.dir/gui/src/main.cpp.obj: X:/POO\ -\ PROJETO\ FINAL/gui/src/main.cpp
 CMakeFiles/kanban_gui.dir/gui/src/main.cpp.obj: CMakeFiles/kanban_gui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="X:\POO - PROJETO FINAL\build-gui\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/kanban_gui.dir/gui/src/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="X:\POO - PROJETO FINAL\build-gui\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/kanban_gui.dir/gui/src/main.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/kanban_gui.dir/gui/src/main.cpp.obj -MF CMakeFiles\kanban_gui.dir\gui\src\main.cpp.obj.d -o CMakeFiles\kanban_gui.dir\gui\src\main.cpp.obj -c "X:\POO - PROJETO FINAL\gui\src\main.cpp"
 
 CMakeFiles/kanban_gui.dir/gui/src/main.cpp.i: cmake_force
@@ -98,7 +106,7 @@ CMakeFiles/kanban_gui.dir/gui/src/MainWindow.cpp.obj: CMakeFiles/kanban_gui.dir/
 CMakeFiles/kanban_gui.dir/gui/src/MainWindow.cpp.obj: CMakeFiles/kanban_gui.dir/includes_CXX.rsp
 CMakeFiles/kanban_gui.dir/gui/src/MainWindow.cpp.obj: X:/POO\ -\ PROJETO\ FINAL/gui/src/MainWindow.cpp
 CMakeFiles/kanban_gui.dir/gui/src/MainWindow.cpp.obj: CMakeFiles/kanban_gui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="X:\POO - PROJETO FINAL\build-gui\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/kanban_gui.dir/gui/src/MainWindow.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="X:\POO - PROJETO FINAL\build-gui\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/kanban_gui.dir/gui/src/MainWindow.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/kanban_gui.dir/gui/src/MainWindow.cpp.obj -MF CMakeFiles\kanban_gui.dir\gui\src\MainWindow.cpp.obj.d -o CMakeFiles\kanban_gui.dir\gui\src\MainWindow.cpp.obj -c "X:\POO - PROJETO FINAL\gui\src\MainWindow.cpp"
 
 CMakeFiles/kanban_gui.dir/gui/src/MainWindow.cpp.i: cmake_force
@@ -113,7 +121,7 @@ CMakeFiles/kanban_gui.dir/gui/src/BoardWidget.cpp.obj: CMakeFiles/kanban_gui.dir
 CMakeFiles/kanban_gui.dir/gui/src/BoardWidget.cpp.obj: CMakeFiles/kanban_gui.dir/includes_CXX.rsp
 CMakeFiles/kanban_gui.dir/gui/src/BoardWidget.cpp.obj: X:/POO\ -\ PROJETO\ FINAL/gui/src/BoardWidget.cpp
 CMakeFiles/kanban_gui.dir/gui/src/BoardWidget.cpp.obj: CMakeFiles/kanban_gui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="X:\POO - PROJETO FINAL\build-gui\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/kanban_gui.dir/gui/src/BoardWidget.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="X:\POO - PROJETO FINAL\build-gui\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/kanban_gui.dir/gui/src/BoardWidget.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/kanban_gui.dir/gui/src/BoardWidget.cpp.obj -MF CMakeFiles\kanban_gui.dir\gui\src\BoardWidget.cpp.obj.d -o CMakeFiles\kanban_gui.dir\gui\src\BoardWidget.cpp.obj -c "X:\POO - PROJETO FINAL\gui\src\BoardWidget.cpp"
 
 CMakeFiles/kanban_gui.dir/gui/src/BoardWidget.cpp.i: cmake_force
@@ -124,11 +132,41 @@ CMakeFiles/kanban_gui.dir/gui/src/BoardWidget.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/kanban_gui.dir/gui/src/BoardWidget.cpp.s"
 	C:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "X:\POO - PROJETO FINAL\gui\src\BoardWidget.cpp" -o CMakeFiles\kanban_gui.dir\gui\src\BoardWidget.cpp.s
 
+CMakeFiles/kanban_gui.dir/gui/src/CardWidget.cpp.obj: CMakeFiles/kanban_gui.dir/flags.make
+CMakeFiles/kanban_gui.dir/gui/src/CardWidget.cpp.obj: CMakeFiles/kanban_gui.dir/includes_CXX.rsp
+CMakeFiles/kanban_gui.dir/gui/src/CardWidget.cpp.obj: X:/POO\ -\ PROJETO\ FINAL/gui/src/CardWidget.cpp
+CMakeFiles/kanban_gui.dir/gui/src/CardWidget.cpp.obj: CMakeFiles/kanban_gui.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="X:\POO - PROJETO FINAL\build-gui\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/kanban_gui.dir/gui/src/CardWidget.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/kanban_gui.dir/gui/src/CardWidget.cpp.obj -MF CMakeFiles\kanban_gui.dir\gui\src\CardWidget.cpp.obj.d -o CMakeFiles\kanban_gui.dir\gui\src\CardWidget.cpp.obj -c "X:\POO - PROJETO FINAL\gui\src\CardWidget.cpp"
+
+CMakeFiles/kanban_gui.dir/gui/src/CardWidget.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/kanban_gui.dir/gui/src/CardWidget.cpp.i"
+	C:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "X:\POO - PROJETO FINAL\gui\src\CardWidget.cpp" > CMakeFiles\kanban_gui.dir\gui\src\CardWidget.cpp.i
+
+CMakeFiles/kanban_gui.dir/gui/src/CardWidget.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/kanban_gui.dir/gui/src/CardWidget.cpp.s"
+	C:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "X:\POO - PROJETO FINAL\gui\src\CardWidget.cpp" -o CMakeFiles\kanban_gui.dir\gui\src\CardWidget.cpp.s
+
+CMakeFiles/kanban_gui.dir/gui/src/CardDialog.cpp.obj: CMakeFiles/kanban_gui.dir/flags.make
+CMakeFiles/kanban_gui.dir/gui/src/CardDialog.cpp.obj: CMakeFiles/kanban_gui.dir/includes_CXX.rsp
+CMakeFiles/kanban_gui.dir/gui/src/CardDialog.cpp.obj: X:/POO\ -\ PROJETO\ FINAL/gui/src/CardDialog.cpp
+CMakeFiles/kanban_gui.dir/gui/src/CardDialog.cpp.obj: CMakeFiles/kanban_gui.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="X:\POO - PROJETO FINAL\build-gui\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/kanban_gui.dir/gui/src/CardDialog.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/kanban_gui.dir/gui/src/CardDialog.cpp.obj -MF CMakeFiles\kanban_gui.dir\gui\src\CardDialog.cpp.obj.d -o CMakeFiles\kanban_gui.dir\gui\src\CardDialog.cpp.obj -c "X:\POO - PROJETO FINAL\gui\src\CardDialog.cpp"
+
+CMakeFiles/kanban_gui.dir/gui/src/CardDialog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/kanban_gui.dir/gui/src/CardDialog.cpp.i"
+	C:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "X:\POO - PROJETO FINAL\gui\src\CardDialog.cpp" > CMakeFiles\kanban_gui.dir\gui\src\CardDialog.cpp.i
+
+CMakeFiles/kanban_gui.dir/gui/src/CardDialog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/kanban_gui.dir/gui/src/CardDialog.cpp.s"
+	C:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "X:\POO - PROJETO FINAL\gui\src\CardDialog.cpp" -o CMakeFiles\kanban_gui.dir\gui\src\CardDialog.cpp.s
+
 CMakeFiles/kanban_gui.dir/gui/include/moc_MainWindow.cpp.obj: CMakeFiles/kanban_gui.dir/flags.make
 CMakeFiles/kanban_gui.dir/gui/include/moc_MainWindow.cpp.obj: CMakeFiles/kanban_gui.dir/includes_CXX.rsp
 CMakeFiles/kanban_gui.dir/gui/include/moc_MainWindow.cpp.obj: gui/include/moc_MainWindow.cpp
 CMakeFiles/kanban_gui.dir/gui/include/moc_MainWindow.cpp.obj: CMakeFiles/kanban_gui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="X:\POO - PROJETO FINAL\build-gui\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/kanban_gui.dir/gui/include/moc_MainWindow.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="X:\POO - PROJETO FINAL\build-gui\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/kanban_gui.dir/gui/include/moc_MainWindow.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/kanban_gui.dir/gui/include/moc_MainWindow.cpp.obj -MF CMakeFiles\kanban_gui.dir\gui\include\moc_MainWindow.cpp.obj.d -o CMakeFiles\kanban_gui.dir\gui\include\moc_MainWindow.cpp.obj -c "X:\POO - PROJETO FINAL\build-gui\gui\include\moc_MainWindow.cpp"
 
 CMakeFiles/kanban_gui.dir/gui/include/moc_MainWindow.cpp.i: cmake_force
@@ -143,7 +181,7 @@ CMakeFiles/kanban_gui.dir/gui/include/moc_BoardWidget.cpp.obj: CMakeFiles/kanban
 CMakeFiles/kanban_gui.dir/gui/include/moc_BoardWidget.cpp.obj: CMakeFiles/kanban_gui.dir/includes_CXX.rsp
 CMakeFiles/kanban_gui.dir/gui/include/moc_BoardWidget.cpp.obj: gui/include/moc_BoardWidget.cpp
 CMakeFiles/kanban_gui.dir/gui/include/moc_BoardWidget.cpp.obj: CMakeFiles/kanban_gui.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="X:\POO - PROJETO FINAL\build-gui\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/kanban_gui.dir/gui/include/moc_BoardWidget.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="X:\POO - PROJETO FINAL\build-gui\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/kanban_gui.dir/gui/include/moc_BoardWidget.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/kanban_gui.dir/gui/include/moc_BoardWidget.cpp.obj -MF CMakeFiles\kanban_gui.dir\gui\include\moc_BoardWidget.cpp.obj.d -o CMakeFiles\kanban_gui.dir\gui\include\moc_BoardWidget.cpp.obj -c "X:\POO - PROJETO FINAL\build-gui\gui\include\moc_BoardWidget.cpp"
 
 CMakeFiles/kanban_gui.dir/gui/include/moc_BoardWidget.cpp.i: cmake_force
@@ -154,13 +192,47 @@ CMakeFiles/kanban_gui.dir/gui/include/moc_BoardWidget.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/kanban_gui.dir/gui/include/moc_BoardWidget.cpp.s"
 	C:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "X:\POO - PROJETO FINAL\build-gui\gui\include\moc_BoardWidget.cpp" -o CMakeFiles\kanban_gui.dir\gui\include\moc_BoardWidget.cpp.s
 
+CMakeFiles/kanban_gui.dir/gui/include/moc_CardWidget.cpp.obj: CMakeFiles/kanban_gui.dir/flags.make
+CMakeFiles/kanban_gui.dir/gui/include/moc_CardWidget.cpp.obj: CMakeFiles/kanban_gui.dir/includes_CXX.rsp
+CMakeFiles/kanban_gui.dir/gui/include/moc_CardWidget.cpp.obj: gui/include/moc_CardWidget.cpp
+CMakeFiles/kanban_gui.dir/gui/include/moc_CardWidget.cpp.obj: CMakeFiles/kanban_gui.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="X:\POO - PROJETO FINAL\build-gui\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/kanban_gui.dir/gui/include/moc_CardWidget.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/kanban_gui.dir/gui/include/moc_CardWidget.cpp.obj -MF CMakeFiles\kanban_gui.dir\gui\include\moc_CardWidget.cpp.obj.d -o CMakeFiles\kanban_gui.dir\gui\include\moc_CardWidget.cpp.obj -c "X:\POO - PROJETO FINAL\build-gui\gui\include\moc_CardWidget.cpp"
+
+CMakeFiles/kanban_gui.dir/gui/include/moc_CardWidget.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/kanban_gui.dir/gui/include/moc_CardWidget.cpp.i"
+	C:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "X:\POO - PROJETO FINAL\build-gui\gui\include\moc_CardWidget.cpp" > CMakeFiles\kanban_gui.dir\gui\include\moc_CardWidget.cpp.i
+
+CMakeFiles/kanban_gui.dir/gui/include/moc_CardWidget.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/kanban_gui.dir/gui/include/moc_CardWidget.cpp.s"
+	C:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "X:\POO - PROJETO FINAL\build-gui\gui\include\moc_CardWidget.cpp" -o CMakeFiles\kanban_gui.dir\gui\include\moc_CardWidget.cpp.s
+
+CMakeFiles/kanban_gui.dir/gui/include/moc_CardDialog.cpp.obj: CMakeFiles/kanban_gui.dir/flags.make
+CMakeFiles/kanban_gui.dir/gui/include/moc_CardDialog.cpp.obj: CMakeFiles/kanban_gui.dir/includes_CXX.rsp
+CMakeFiles/kanban_gui.dir/gui/include/moc_CardDialog.cpp.obj: gui/include/moc_CardDialog.cpp
+CMakeFiles/kanban_gui.dir/gui/include/moc_CardDialog.cpp.obj: CMakeFiles/kanban_gui.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="X:\POO - PROJETO FINAL\build-gui\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/kanban_gui.dir/gui/include/moc_CardDialog.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/kanban_gui.dir/gui/include/moc_CardDialog.cpp.obj -MF CMakeFiles\kanban_gui.dir\gui\include\moc_CardDialog.cpp.obj.d -o CMakeFiles\kanban_gui.dir\gui\include\moc_CardDialog.cpp.obj -c "X:\POO - PROJETO FINAL\build-gui\gui\include\moc_CardDialog.cpp"
+
+CMakeFiles/kanban_gui.dir/gui/include/moc_CardDialog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/kanban_gui.dir/gui/include/moc_CardDialog.cpp.i"
+	C:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "X:\POO - PROJETO FINAL\build-gui\gui\include\moc_CardDialog.cpp" > CMakeFiles\kanban_gui.dir\gui\include\moc_CardDialog.cpp.i
+
+CMakeFiles/kanban_gui.dir/gui/include/moc_CardDialog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/kanban_gui.dir/gui/include/moc_CardDialog.cpp.s"
+	C:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "X:\POO - PROJETO FINAL\build-gui\gui\include\moc_CardDialog.cpp" -o CMakeFiles\kanban_gui.dir\gui\include\moc_CardDialog.cpp.s
+
 # Object files for target kanban_gui
 kanban_gui_OBJECTS = \
 "CMakeFiles/kanban_gui.dir/gui/src/main.cpp.obj" \
 "CMakeFiles/kanban_gui.dir/gui/src/MainWindow.cpp.obj" \
 "CMakeFiles/kanban_gui.dir/gui/src/BoardWidget.cpp.obj" \
+"CMakeFiles/kanban_gui.dir/gui/src/CardWidget.cpp.obj" \
+"CMakeFiles/kanban_gui.dir/gui/src/CardDialog.cpp.obj" \
 "CMakeFiles/kanban_gui.dir/gui/include/moc_MainWindow.cpp.obj" \
-"CMakeFiles/kanban_gui.dir/gui/include/moc_BoardWidget.cpp.obj"
+"CMakeFiles/kanban_gui.dir/gui/include/moc_BoardWidget.cpp.obj" \
+"CMakeFiles/kanban_gui.dir/gui/include/moc_CardWidget.cpp.obj" \
+"CMakeFiles/kanban_gui.dir/gui/include/moc_CardDialog.cpp.obj"
 
 # External object files for target kanban_gui
 kanban_gui_EXTERNAL_OBJECTS =
@@ -168,8 +240,12 @@ kanban_gui_EXTERNAL_OBJECTS =
 kanban_gui.exe: CMakeFiles/kanban_gui.dir/gui/src/main.cpp.obj
 kanban_gui.exe: CMakeFiles/kanban_gui.dir/gui/src/MainWindow.cpp.obj
 kanban_gui.exe: CMakeFiles/kanban_gui.dir/gui/src/BoardWidget.cpp.obj
+kanban_gui.exe: CMakeFiles/kanban_gui.dir/gui/src/CardWidget.cpp.obj
+kanban_gui.exe: CMakeFiles/kanban_gui.dir/gui/src/CardDialog.cpp.obj
 kanban_gui.exe: CMakeFiles/kanban_gui.dir/gui/include/moc_MainWindow.cpp.obj
 kanban_gui.exe: CMakeFiles/kanban_gui.dir/gui/include/moc_BoardWidget.cpp.obj
+kanban_gui.exe: CMakeFiles/kanban_gui.dir/gui/include/moc_CardWidget.cpp.obj
+kanban_gui.exe: CMakeFiles/kanban_gui.dir/gui/include/moc_CardDialog.cpp.obj
 kanban_gui.exe: CMakeFiles/kanban_gui.dir/build.make
 kanban_gui.exe: libkanban_core.a
 kanban_gui.exe: C:/Qt/6.9.3/mingw_64/lib/libQt6Widgets.a
@@ -178,7 +254,7 @@ kanban_gui.exe: C:/Qt/6.9.3/mingw_64/lib/libQt6Core.a
 kanban_gui.exe: CMakeFiles/kanban_gui.dir/linkLibs.rsp
 kanban_gui.exe: CMakeFiles/kanban_gui.dir/objects1.rsp
 kanban_gui.exe: CMakeFiles/kanban_gui.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="X:\POO - PROJETO FINAL\build-gui\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable kanban_gui.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="X:\POO - PROJETO FINAL\build-gui\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable kanban_gui.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\kanban_gui.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -190,6 +266,8 @@ CMakeFiles/kanban_gui.dir/clean:
 .PHONY : CMakeFiles/kanban_gui.dir/clean
 
 CMakeFiles/kanban_gui.dir/depend: gui/include/moc_BoardWidget.cpp
+CMakeFiles/kanban_gui.dir/depend: gui/include/moc_CardDialog.cpp
+CMakeFiles/kanban_gui.dir/depend: gui/include/moc_CardWidget.cpp
 CMakeFiles/kanban_gui.dir/depend: gui/include/moc_MainWindow.cpp
 	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "X:\POO - PROJETO FINAL" "X:\POO - PROJETO FINAL" "X:\POO - PROJETO FINAL\build-gui" "X:\POO - PROJETO FINAL\build-gui" "X:\POO - PROJETO FINAL\build-gui\CMakeFiles\kanban_gui.dir\DependInfo.cmake" "--color=$(COLOR)"
 .PHONY : CMakeFiles/kanban_gui.dir/depend

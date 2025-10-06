@@ -1,12 +1,18 @@
 #include "../include/BoardWidget.h"
+#include "../include/CardWidget.h"
 #include <QScrollArea>
 #include <QFrame>
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
+#include <QDragEnterEvent>
+#include <QDropEvent>
+#include <QDragMoveEvent>
+#include <QMimeData>
+#include <iostream>
 
 BoardWidget::BoardWidget(kanban::Board& board, QWidget* parent) 
-    : QWidget(parent), m_board(board) {
+    : QWidget(parent), m_board(board), m_highlightedColumn(-1) {
     setupUI();
     refreshColumns();
 }
@@ -26,9 +32,14 @@ void BoardWidget::setupUI() {
     
     m_scrollArea->setWidget(m_columnsContainer);
     m_layout->addWidget(m_scrollArea);
+    
+    // Habilitar drop
+    setAcceptDrops(true);
 }
 
 void BoardWidget::refreshColumns() {
+    std::cout << "BoardWidget: Atualizando colunas..." << std::endl;
+    
     // Limpar colunas existentes
     QLayout* containerLayout = m_columnsContainer->layout();
     while (auto item = containerLayout->takeAt(0)) {
@@ -47,6 +58,8 @@ void BoardWidget::refreshColumns() {
     
     // Adicionar colunas do board
     for (const auto& column : m_board.columns()) {
+        std::cout << "Processando coluna: " << column.name() << " com " << column.cardIds().size() << " cartões" << std::endl;
+        
         QFrame* columnFrame = new QFrame(m_columnsContainer);
         columnFrame->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
         columnFrame->setLineWidth(1);
@@ -95,39 +108,27 @@ void BoardWidget::refreshColumns() {
         separator->setStyleSheet("QFrame { color: #c1c7d0; }");
         columnLayout->addWidget(separator);
         
-        // Área para cartões (vazia por enquanto)
+        // Área para cartões REAIS
         QWidget* cardsArea = new QWidget(columnFrame);
         cardsArea->setStyleSheet("QWidget { background-color: transparent; }");
         QVBoxLayout* cardsLayout = new QVBoxLayout(cardsArea);
         cardsLayout->setAlignment(Qt::AlignTop);
         cardsLayout->setSpacing(6);
         
-        // Cartão de exemplo (remover depois)
+        // Adicionar cartões REAIS da coluna
         if (!column.cardIds().empty()) {
-            QFrame* sampleCard = new QFrame(cardsArea);
-            sampleCard->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
-            sampleCard->setLineWidth(1);
-            sampleCard->setStyleSheet(
-                "QFrame { "
-                "   background-color: white; "
-                "   border-radius: 4px; "
-                "   padding: 8px; "
-                "   border: 1px solid #dfe1e6; "
-                "}"
-            );
-            
-            QVBoxLayout* cardLayout = new QVBoxLayout(sampleCard);
-            
-            QLabel* cardTitle = new QLabel("Cartão de Exemplo", sampleCard);
-            cardTitle->setStyleSheet("QLabel { font-weight: bold; }");
-            cardLayout->addWidget(cardTitle);
-            
-            QLabel* cardInfo = new QLabel("Arraste para mover", sampleCard);
-            cardInfo->setStyleSheet("QLabel { color: #5e6c84; font-size: 11px; }");
-            cardLayout->addWidget(cardInfo);
-            
-            cardsLayout->addWidget(sampleCard);
+            std::cout << "Adicionando " << column.cardIds().size() << " cartões visíveis" << std::endl;
+            for (auto cardId : column.cardIds()) {
+                if (const auto* card = m_board.findCard(cardId)) {
+                    std::cout << "Cartão: " << card->title() << " (ID: " << card->id() << ")" << std::endl;
+                    CardWidget* cardWidget = new CardWidget(*card, cardsArea);
+                    cardsLayout->addWidget(cardWidget);
+                } else {
+                    std::cout << "ERRO: Cartão ID " << cardId << " não encontrado!" << std::endl;
+                }
+            }
         } else {
+            std::cout << "Coluna vazia" << std::endl;
             QLabel* emptyLabel = new QLabel("Vazio", cardsArea);
             emptyLabel->setStyleSheet("QLabel { color: #5e6c84; font-style: italic; padding: 20px; }");
             emptyLabel->setAlignment(Qt::AlignCenter);
@@ -135,8 +136,155 @@ void BoardWidget::refreshColumns() {
         }
         
         columnLayout->addWidget(cardsArea);
-        columnLayout->addStretch(); // Empurra tudo para o topo
+        columnLayout->addStretch();
         
         containerLayout->addWidget(columnFrame);
+    }
+    
+    std::cout << "BoardWidget: Atualização completa" << std::endl;
+}
+
+void BoardWidget::dragEnterEvent(QDragEnterEvent* event) {
+    if (event->mimeData()->hasFormat("application/x-kanban-card-id")) {
+        event->acceptProposedAction();
+    } else {
+        event->ignore();
+    }
+}
+
+void BoardWidget::dragMoveEvent(QDragMoveEvent* event) {
+    if (!event->mimeData()->hasFormat("application/x-kanban-card-id")) {
+        event->ignore();
+        return;
+    }
+    
+    int columnIndex = findColumnAtPosition(event->position().toPoint());
+    if (columnIndex != m_highlightedColumn) {
+        // Remover highlight anterior
+        if (m_highlightedColumn != -1) {
+            highlightColumn(m_highlightedColumn, false);
+        }
+        
+        // Aplicar novo highlight
+        m_highlightedColumn = columnIndex;
+        if (m_highlightedColumn != -1) {
+            highlightColumn(m_highlightedColumn, true);
+        }
+    }
+    
+    event->acceptProposedAction();
+}
+
+void BoardWidget::dragLeaveEvent(QDragLeaveEvent* event) {
+    if (m_highlightedColumn != -1) {
+        highlightColumn(m_highlightedColumn, false);
+        m_highlightedColumn = -1;
+    }
+    event->accept();
+}
+
+void BoardWidget::dropEvent(QDropEvent* event) {
+    // Remover highlight
+    if (m_highlightedColumn != -1) {
+        highlightColumn(m_highlightedColumn, false);
+        m_highlightedColumn = -1;
+    }
+    
+    if (!event->mimeData()->hasFormat("application/x-kanban-card-id")) {
+        event->ignore();
+        return;
+    }
+    
+    // Obter ID do cartão
+    QByteArray itemData = event->mimeData()->data("application/x-kanban-card-id");
+    kanban::Card::Id cardId = itemData.toULongLong();
+    
+    // Encontrar coluna destino
+    int targetColumnIndex = findColumnAtPosition(event->position().toPoint());
+    if (targetColumnIndex == -1) {
+        event->ignore();
+        return;
+    }
+    
+    // Encontrar coluna origem e destino
+    kanban::Column::Id fromColumnId = 0;
+    kanban::Column::Id toColumnId = 0;
+    
+    int columnIndex = 0;
+    for (const auto& col : m_board.columns()) {
+        if (col.indexOf(cardId).has_value()) {
+            fromColumnId = col.id();
+        }
+        if (columnIndex == targetColumnIndex) {
+            toColumnId = col.id();
+        }
+        columnIndex++;
+    }
+    
+    if (fromColumnId != 0 && toColumnId != 0 && fromColumnId != toColumnId) {
+        // Mover cartão
+        if (m_board.moveCard(fromColumnId, toColumnId, cardId, 0)) {
+            refreshColumns();
+            
+            // Registrar no activity log
+            kanban::ActivityLog::Entry entry;
+            entry.timestamp = std::chrono::system_clock::now();
+            entry.action = "MOVE_CARD";
+            entry.details = "Cartão " + std::to_string(cardId) + 
+                           " movido da coluna " + std::to_string(fromColumnId) + 
+                           " para " + std::to_string(toColumnId);
+            m_board.activityLog().append(std::move(entry));
+            
+            event->acceptProposedAction();
+            return;
+        }
+    }
+    
+    event->ignore();
+}
+
+int BoardWidget::findColumnAtPosition(const QPoint& pos) {
+    for (int i = 0; i < m_columnsContainer->layout()->count(); ++i) {
+        QLayoutItem* item = m_columnsContainer->layout()->itemAt(i);
+        if (item && item->widget()) {
+            QWidget* columnWidget = item->widget();
+            QRect columnRect = columnWidget->geometry();
+            QPoint columnPos = m_columnsContainer->mapFromParent(pos);
+            
+            if (columnRect.contains(columnPos)) {
+                return i;
+            }
+        }
+    }
+    return -1;
+}
+
+void BoardWidget::highlightColumn(int columnIndex, bool highlight) {
+    QLayoutItem* item = m_columnsContainer->layout()->itemAt(columnIndex);
+    if (item && item->widget()) {
+        QFrame* columnFrame = qobject_cast<QFrame*>(item->widget());
+        if (columnFrame) {
+            if (highlight) {
+                columnFrame->setStyleSheet(
+                    "QFrame { "
+                    "   background-color: #dbe1f1; "
+                    "   border-radius: 8px; "
+                    "   margin: 8px; "
+                    "   padding: 8px; "
+                    "   border: 2px solid #4c9aff; "
+                    "}"
+                );
+            } else {
+                columnFrame->setStyleSheet(
+                    "QFrame { "
+                    "   background-color: #ebecf0; "
+                    "   border-radius: 8px; "
+                    "   margin: 8px; "
+                    "   padding: 8px; "
+                    "   border: 1px solid #dfe1e6; "
+                    "}"
+                );
+            }
+        }
     }
 }

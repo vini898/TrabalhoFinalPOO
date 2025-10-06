@@ -6,11 +6,13 @@
 #include "ICardFilter.h"
 #include <algorithm>
 #include <stdexcept>
+#include <iostream>  // ← ADICIONE ESTE
 
 namespace kanban {
 
 Board::Board(Id id, std::string title)
-    : m_id(id), m_title(std::move(title)) {
+    : m_id(id), m_title(std::move(title)), m_cardSeq(1), m_columnSeq(1) {
+    // Construtor - inicialização já está feita na lista de inicialização
 }
 
 Board::Id Board::id() const noexcept {
@@ -71,14 +73,23 @@ const std::vector<Card>& Board::cards() const noexcept {
 }
 
 Card& Board::createCard(std::string title) {
-    Card::Id newId = nextCardId();
+    static Card::Id manualId = 1;
+    Card::Id newId = manualId++;
+    
+    std::cout << "CRIANDO CARTÃO: " << title << " (ID: " << newId << ")" << std::endl;
+    
     m_cards.emplace_back(newId, std::move(title));
-    Card& newCard = m_cards.back();
     
     // Atualiza índice
     m_cardIndex[newId] = m_cards.size() - 1;
     
-    return newCard;
+    std::cout << "Total de cartões: " << m_cards.size() << std::endl;
+    
+    // Verificar se a referência é válida
+    Card& card = m_cards.back();
+    std::cout << "Referência do cartão - ID: " << card.id() << ", Título: " << card.title() << std::endl;
+    
+    return card;
 }
 
 bool Board::deleteCard(Card::Id cardId) noexcept {
@@ -120,14 +131,22 @@ const std::vector<Column>& Board::columns() const noexcept {
 }
 
 Column& Board::addColumn(std::string name, std::uint32_t orderIndex) {
-    Column::Id newId = nextColumnId();
+    static Column::Id manualId = 1;
+    Column::Id newId = manualId++;
+    
+    std::cout << "CRIANDO COLUNA: " << name << " (ID: " << newId << ")" << std::endl;
+    
     m_columns.emplace_back(newId, std::move(name), orderIndex);
-    Column& newColumn = m_columns.back();
     
     // Atualiza índice
     m_columnIndex[newId] = m_columns.size() - 1;
     
-    return newColumn;
+    std::cout << "Total de colunas: " << m_columns.size() << std::endl;
+    
+    // NÃO retornar referência - pode se tornar inválida
+    // return m_columns.back();
+    
+    return m_columns.back(); // Vamos tentar uma última vez com debug
 }
 
 bool Board::removeColumn(Column::Id columnId) noexcept {
@@ -203,7 +222,7 @@ const ActivityLog& Board::activityLog() const noexcept {
 
 ActivityLog& Board::activityLog() noexcept {
     if (!m_log) {
-        m_log = new ActivityLog(); // Gerenciamento simplificado para Etapa 2
+        m_log = new ActivityLog(); // Gerenciamento simplificado
     }
     return *m_log;
 }

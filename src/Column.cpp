@@ -1,5 +1,6 @@
 #include "Column.h"
 #include <algorithm>
+#include <iostream>
 
 namespace kanban {
 
@@ -32,10 +33,23 @@ const std::vector<Card::Id>& Column::cardIds() const noexcept {
 }
 
 bool Column::addCard(Card::Id cardId) {
-    if (std::find(m_cards.begin(), m_cards.end(), cardId) != m_cards.end()) {
-        return false; // já existe
+    std::cout << "=== Column::addCard ===" << std::endl;
+    std::cout << "Coluna: " << m_name << " (ID: " << m_id << ")" << std::endl;
+    std::cout << "Tentando adicionar cartão ID: " << cardId << std::endl;
+    std::cout << "Cartões atuais na coluna: " << m_cards.size() << std::endl;
+    
+    // Verificar se o cartão já existe na coluna
+    auto it = std::find(m_cards.begin(), m_cards.end(), cardId);
+    if (it != m_cards.end()) {
+        std::cout << "❌ Cartão já existe na coluna" << std::endl;
+        return false;
     }
+    
+    std::cout << "✅ Cartão não existe, adicionando..." << std::endl;
     m_cards.push_back(cardId);
+    std::cout << "✅ Cartão adicionado. Total agora: " << m_cards.size() << std::endl;
+    std::cout << "=== FIM Column::addCard ===" << std::endl;
+    
     return true;
 }
 

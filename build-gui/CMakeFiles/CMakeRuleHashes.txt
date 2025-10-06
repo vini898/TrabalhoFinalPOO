@@ -1,3 +1,5 @@
 # Hashes of file build rules.
 c487cc780698f53d89ecd4fee0d03f8d gui/include/moc_BoardWidget.cpp
+46b3869314b0b7d2586ec48342c2f5d1 gui/include/moc_CardDialog.cpp
+38a63eccba19b993801bd6febd17ea43 gui/include/moc_CardWidget.cpp
 cfec4d74a04d0ac36adfa8d22caa4b12 gui/include/moc_MainWindow.cpp

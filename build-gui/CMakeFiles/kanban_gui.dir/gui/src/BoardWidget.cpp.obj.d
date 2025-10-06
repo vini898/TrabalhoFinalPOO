@@ -392,17 +392,74 @@ CMakeFiles/kanban_gui.dir/gui/src/BoardWidget.cpp.obj: \
  C:/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractscrollarea.h \
  C:/Qt/6.9.3/mingw_64/include/QtWidgets/qframe.h \
  C:/Qt/6.9.3/mingw_64/include/QtWidgets/qwidget.h \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/QDropEvent \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qevent.h \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/qcoreevent.h \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/qbasictimer.h \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/qabstracteventdispatcher.h \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/qeventloop.h \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/qdeadlinetimer.h \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/qelapsedtimer.h \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/qiodevice.h \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/qurl.h \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qeventpoint.h \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qvector2d.h \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qvectornd.h \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qpointingdevice.h \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qinputdevice.h \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qscreen.h \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/QList \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/qlist.h \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/QObject \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/qobject.h \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/QRect \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/qrect.h \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/QSize \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/qsize.h \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/QSizeF \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/QTransform \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qtransform.h \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/qnativeinterface.h \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qscreen_platform.h \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qguiapplication.h \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/qcoreapplication.h \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qinputmethod.h \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/qlocale.h \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qguiapplication_platform.h \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/QDragEnterEvent \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/QDragMoveEvent \
  X:/POO\ -\ PROJETO\ FINAL/design/include/Board.h \
  X:/POO\ -\ PROJETO\ FINAL/design/include/Card.h \
  X:/POO\ -\ PROJETO\ FINAL/design/include/Column.h \
  X:/POO\ -\ PROJETO\ FINAL/design/include/User.h \
  X:/POO\ -\ PROJETO\ FINAL/design/include/ActivityLog.h \
+ X:/POO\ -\ PROJETO\ FINAL/gui/include/CardWidget.h \
  C:/Qt/6.9.3/mingw_64/include/QtWidgets/QFrame \
  C:/Qt/6.9.3/mingw_64/include/QtWidgets/qframe.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/QVBoxLayout \
  C:/Qt/6.9.3/mingw_64/include/QtWidgets/QLabel \
  C:/Qt/6.9.3/mingw_64/include/QtWidgets/qlabel.h \
  C:/Qt/6.9.3/mingw_64/include/QtGui/qpicture.h \
- C:/Qt/6.9.3/mingw_64/include/QtCore/qiodevice.h \
  C:/Qt/6.9.3/mingw_64/include/QtGui/qtextdocument.h \
- C:/Qt/6.9.3/mingw_64/include/QtCore/qurl.h \
- C:/Qt/6.9.3/mingw_64/include/QtWidgets/QVBoxLayout
+ C:/Qt/6.9.3/mingw_64/include/QtGui/QMouseEvent \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/QDrag \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qdrag.h \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/QMimeData \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/qmimedata.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/QApplication \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qapplication.h \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ostream \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ios \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_ios.h \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets.h \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cwctype \
+ C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wctype.h \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/ctype_base.h \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/ctype_inline.h \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets.tcc \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_ios.tcc \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ostream.tcc \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc

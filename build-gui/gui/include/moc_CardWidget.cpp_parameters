@@ -1,0 +1,5 @@
+-DWIN32
+-o
+X:/POO - PROJETO FINAL/build-gui/gui/include/moc_CardWidget.cpp
+X:/POO - PROJETO FINAL/gui/include/CardWidget.h
+-DWIN32

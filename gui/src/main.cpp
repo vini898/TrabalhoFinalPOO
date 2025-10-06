@@ -1,16 +1,23 @@
-#include "../include/MainWindow.h"
+#include "MainWindow.h"
 #include <QApplication>
+#include <iostream>
 
 int main(int argc, char *argv[]) {
-    QApplication app(argc, argv);
+    std::cout << "=== KANBAN LITE - APLICAÇÃO COMPLETA ===" << std::endl;
     
-    // Configuração da aplicação
+    QApplication app(argc, argv);
     app.setApplicationName("Kanban Lite");
     app.setApplicationVersion("1.0");
     app.setOrganizationName("POO Project");
     
-    MainWindow mainWindow;
-    mainWindow.show();
-    
-    return app.exec();
+    try {
+        std::cout << "Iniciando Kanban Lite..." << std::endl;
+        MainWindow mainWindow;
+        mainWindow.show();
+        return app.exec();
+        
+    } catch (const std::exception& e) {
+        std::cerr << "ERRO: " << e.what() << std::endl;
+        return 1;
+    }
 }

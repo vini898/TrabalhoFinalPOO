@@ -1,7 +1,6 @@
 #pragma once
 
 #include <QMainWindow>
-#include <QHBoxLayout>
 #include <QMenuBar>
 #include <QStatusBar>
 #include <QMessageBox>
@@ -20,7 +19,6 @@ public:
     MainWindow(QWidget* parent = nullptr);
     ~MainWindow() = default;
 
-    // Métodos públicos
     void onNewBoard();
     void onOpenBoard();
     void onSaveBoard();
@@ -30,11 +28,12 @@ private:
     void setupUI();
     void setupMenus();
     void setupConnections();
-    void setupDemoData(); 
+    void setupDemoData();
+
 
     kanban::Board m_board;
+    BoardWidget* m_boardWidget;
     
-    // Actions
     QAction* m_newBoardAction;
     QAction* m_openBoardAction;
     QAction* m_saveBoardAction;

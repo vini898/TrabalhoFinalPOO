@@ -383,12 +383,6 @@ CMakeFiles/kanban_gui.dir/gui/include/moc_MainWindow.cpp.obj: \
  C:/Qt/6.9.3/mingw_64/include/QtGui/qcursor.h \
  C:/Qt/6.9.3/mingw_64/include/QtGui/qbitmap.h \
  C:/Qt/6.9.3/mingw_64/include/QtWidgets/qtabwidget.h \
- C:/Qt/6.9.3/mingw_64/include/QtWidgets/QHBoxLayout \
- C:/Qt/6.9.3/mingw_64/include/QtWidgets/qboxlayout.h \
- C:/Qt/6.9.3/mingw_64/include/QtWidgets/qlayout.h \
- C:/Qt/6.9.3/mingw_64/include/QtWidgets/qlayoutitem.h \
- C:/Qt/6.9.3/mingw_64/include/QtWidgets/qboxlayout.h \
- C:/Qt/6.9.3/mingw_64/include/QtWidgets/qgridlayout.h \
  C:/Qt/6.9.3/mingw_64/include/QtWidgets/QMenuBar \
  C:/Qt/6.9.3/mingw_64/include/QtWidgets/qmenubar.h \
  C:/Qt/6.9.3/mingw_64/include/QtWidgets/qmenu.h \
@@ -462,10 +456,38 @@ CMakeFiles/kanban_gui.dir/gui/include/moc_MainWindow.cpp.obj: \
  X:/POO\ -\ PROJETO\ FINAL/gui/include/BoardWidget.h \
  C:/Qt/6.9.3/mingw_64/include/QtWidgets/QWidget \
  C:/Qt/6.9.3/mingw_64/include/QtWidgets/qwidget.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/QHBoxLayout \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qboxlayout.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qlayout.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qlayoutitem.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qboxlayout.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qgridlayout.h \
  C:/Qt/6.9.3/mingw_64/include/QtWidgets/QScrollArea \
  C:/Qt/6.9.3/mingw_64/include/QtWidgets/qscrollarea.h \
  C:/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractscrollarea.h \
  C:/Qt/6.9.3/mingw_64/include/QtWidgets/qframe.h \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/QDropEvent \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qevent.h \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qeventpoint.h \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qvector2d.h \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qvectornd.h \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qpointingdevice.h \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qinputdevice.h \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qscreen.h \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/QList \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/qlist.h \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/QObject \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/qobject.h \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/QRect \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/qrect.h \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/QSize \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/qsize.h \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/QSizeF \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/QTransform \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qtransform.h \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qscreen_platform.h \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/QDragEnterEvent \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/QDragMoveEvent \
  X:/POO\ -\ PROJETO\ FINAL/design/include/Board.h \
  X:/POO\ -\ PROJETO\ FINAL/design/include/Card.h \
  X:/POO\ -\ PROJETO\ FINAL/design/include/Column.h \
