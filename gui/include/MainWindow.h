@@ -10,6 +10,9 @@
 #include <QFileDialog>
 #include "BoardWidget.h"
 #include "../../design/include/Board.h"
+#include "CardDialog.h"
+#include "JsonSerializer.h"  
+#include <fstream>           
 
 class MainWindow : public QMainWindow
 {
@@ -29,6 +32,7 @@ private:
     void setupMenus();
     void setupConnections();
     void setupDemoData();
+    void onNewCard();
 
 
     kanban::Board m_board;

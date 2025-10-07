@@ -493,6 +493,38 @@ CMakeFiles/kanban_gui.dir/gui/include/moc_MainWindow.cpp.obj: \
  X:/POO\ -\ PROJETO\ FINAL/design/include/Column.h \
  X:/POO\ -\ PROJETO\ FINAL/design/include/User.h \
  X:/POO\ -\ PROJETO\ FINAL/design/include/ActivityLog.h \
+ X:/POO\ -\ PROJETO\ FINAL/gui/include/CardDialog.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/QDialog \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qdialog.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/QLineEdit \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qlineedit.h \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qtextcursor.h \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qtextdocument.h \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qtextformat.h \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qpen.h \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qtextoption.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/QTextEdit \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qtextedit.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/QComboBox \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qcombobox.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qstyleoption.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractspinbox.h \
+ C:/Qt/6.9.3/mingw_64/include/QtGui/qvalidator.h \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/qregularexpression.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qslider.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractslider.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qstyle.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qtabbar.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qrubberband.h \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/qabstractitemmodel.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/QListWidget \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qlistwidget.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qlistview.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractitemview.h \
+ C:/Qt/6.9.3/mingw_64/include/QtCore/qitemselectionmodel.h \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/QDialogButtonBox \
+ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
  C:/Qt/6.9.3/mingw_64/include/QtCore/qtmochelpers.h \
  C:/Qt/6.9.3/mingw_64/include/QtCore/qtmocconstants.h \
  C:/Qt/6.9.3/mingw_64/include/QtCore/q20algorithm.h \

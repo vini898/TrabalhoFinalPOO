@@ -136,11 +136,86 @@ void MainWindow::setupMenus() {
     fileMenu->addSeparator();
     m_exitAction = fileMenu->addAction("&Sair");
     
+    // Menu Cartões - NOVO MENU
+    QMenu* cardMenu = menuBar()->addMenu("&Cartões");
+    QAction* newCardAction = cardMenu->addAction("&Novo Cartão");
+    
     // Menu Ajuda
     QMenu* helpMenu = menuBar()->addMenu("&Ajuda");
     m_aboutAction = helpMenu->addAction("&Sobre");
     
+    // Conectar novo cartão 
+    connect(newCardAction, &QAction::triggered, this, &MainWindow::onNewCard);
+    
     std::cout << "SetupMenus: Menus configurados" << std::endl;
+}
+
+void MainWindow::onNewCard() {
+    std::cout << "MainWindow: Abrindo diálogo para novo cartão..." << std::endl;
+    
+    // Verificar se há colunas disponíveis
+    if (m_board.columns().empty()) {
+        QMessageBox::warning(this, "Aviso", "Crie pelo menos uma coluna antes de adicionar cartões.");
+        return;
+    }
+    
+    // Criar e mostrar diálogo
+    CardDialog dialog(m_board, this);
+    if (dialog.exec() == QDialog::Accepted) {
+        std::cout << "MainWindow: Criando novo cartão..." << std::endl;
+        
+        // Criar cartão no board
+        auto& newCard = m_board.createCard(dialog.getTitle().toStdString());
+        newCard.setDescription(dialog.getDescription().toStdString());
+        
+        // Configurar tags
+        auto tags = dialog.getTags();
+        for (const auto& tag : tags) {
+            newCard.addTag(tag);
+        }
+        
+        // Configurar assignee
+        if (auto assigneeId = dialog.getAssigneeId()) {
+            newCard.setAssigneeId(*assigneeId);
+        }
+        
+        // Configurar prioridade
+        if (auto priority = dialog.getPriority()) {
+            newCard.setPriority(*priority);
+        }
+        
+        // Adicionar à PRIMEIRA coluna (To Do) - CORRIGIDO
+        if (!m_board.columns().empty()) {
+            // Usar findColumn para obter referência não-const
+            auto* firstColumn = m_board.findColumn(m_board.columns()[0].id());
+            if (firstColumn) {
+                bool added = firstColumn->addCard(newCard.id());
+                
+                if (added) {
+                    std::cout << "MainWindow: Cartão adicionado à coluna '" << firstColumn->name() << "'" << std::endl;
+                    
+                    // Registrar atividade
+                    kanban::ActivityLog::Entry entry;
+                    entry.timestamp = std::chrono::system_clock::now();
+                    entry.action = "CREATE_CARD";
+                    entry.details = "Novo cartão criado: " + newCard.title();
+                    m_board.activityLog().append(std::move(entry));
+                    
+                    // Atualizar interface
+                    if (m_boardWidget) {
+                        m_boardWidget->refreshColumns();
+                    }
+                    
+                    statusBar()->showMessage("Cartão criado com sucesso!");
+                } else {
+                    std::cout << "ERRO: Não foi possível adicionar cartão à coluna" << std::endl;
+                    QMessageBox::warning(this, "Erro", "Não foi possível adicionar o cartão à coluna.");
+                }
+            }
+        }
+    } else {
+        std::cout << "MainWindow: Criação de cartão cancelada" << std::endl;
+    }
 }
 
 void MainWindow::setupConnections() {

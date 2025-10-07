@@ -6,7 +6,7 @@
 #include "ICardFilter.h"
 #include <algorithm>
 #include <stdexcept>
-#include <iostream>  // ← ADICIONE ESTE
+#include <iostream>  
 
 namespace kanban {
 
