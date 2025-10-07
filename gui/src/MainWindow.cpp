@@ -230,20 +230,96 @@ void MainWindow::setupConnections() {
 }
 
 void MainWindow::onNewBoard() {
-    QMessageBox::information(this, "Novo Quadro", "Criando novo quadro...");
+    QMessageBox::StandardButton reply = QMessageBox::question(this, "Novo Quadro",
+        "Deseja criar um novo quadro? Os dados atuais serão perdidos.",
+        QMessageBox::Yes | QMessageBox::No);
+    
+    if (reply == QMessageBox::Yes) {
+        // Criar novo board vazio
+        m_board = kanban::Board(1, "Novo Quadro Kanban");
+        
+        // Adicionar colunas padrão
+        m_board.addColumn("To Do", 0);
+        m_board.addColumn("Doing", 1);
+        m_board.addColumn("Done", 2);
+        
+        // Atualizar interface
+        if (m_boardWidget) {
+            m_boardWidget->refreshColumns();
+        }
+        
+        statusBar()->showMessage("Novo quadro criado");
+        std::cout << "Novo quadro criado" << std::endl;
+    }
 }
 
 void MainWindow::onOpenBoard() {
     QString fileName = QFileDialog::getOpenFileName(this, "Abrir Quadro", "", "JSON Files (*.json)");
     if (!fileName.isEmpty()) {
-        QMessageBox::information(this, "Abrir", "Abrindo: " + fileName);
+        try {
+            std::cout << "Abrindo quadro de: " << fileName.toStdString() << std::endl;
+            
+            // Ler arquivo
+            std::ifstream file(fileName.toStdString());
+            if (!file.is_open()) {
+                throw std::runtime_error("Não foi possível abrir o arquivo para leitura");
+            }
+            
+            std::string jsonData((std::istreambuf_iterator<char>(file)), 
+                                std::istreambuf_iterator<char>());
+            file.close();
+            
+            // Usar JsonSerializer para carregar - CORRIGIDO
+            kanban::JsonSerializer serializer;
+            kanban::Board newBoard(1, "Quadro Carregado");  // Título temporário
+            serializer.deserialize(jsonData, newBoard);     // Agora com 2 argumentos
+            
+            // Substituir board atual
+            m_board = std::move(newBoard);
+            
+            // Atualizar interface
+            if (m_boardWidget) {
+                m_boardWidget->refreshColumns();
+            }
+            
+            std::cout << "Quadro carregado com sucesso!" << std::endl;
+            statusBar()->showMessage("Quadro carregado: " + fileName);
+            
+        } catch (const std::exception& e) {
+            std::cerr << "ERRO ao carregar: " << e.what() << std::endl;
+            QMessageBox::critical(this, "Erro ao Abrir", 
+                QString("Não foi possível carregar o quadro:\n%1").arg(e.what()));
+        }
     }
 }
 
 void MainWindow::onSaveBoard() {
     QString fileName = QFileDialog::getSaveFileName(this, "Salvar Quadro", "", "JSON Files (*.json)");
     if (!fileName.isEmpty()) {
-        QMessageBox::information(this, "Salvar", "Salvando: " + fileName);
+        try {
+            std::cout << "Salvando quadro para: " << fileName.toStdString() << std::endl;
+            
+            // Usar JsonSerializer para salvar
+            kanban::JsonSerializer serializer;
+            std::string jsonData = serializer.serialize(m_board);
+            
+            // Escrever para arquivo
+            std::ofstream file(fileName.toStdString());
+            if (!file.is_open()) {
+                throw std::runtime_error("Não foi possível abrir o arquivo para escrita");
+            }
+            
+            file << jsonData;
+            file.close();
+            
+            std::cout << "Quadro salvo com sucesso!" << std::endl;
+            statusBar()->showMessage("Quadro salvo: " + fileName);
+            
+        } catch (const std::exception& e) {
+            std::cerr << "ERRO ao salvar: " << e.what() << std::endl;
+            QMessageBox::critical(this, "Erro ao Salvar", 
+                QString("Não foi possível salvar o quadro:\n%1").arg(e.what()));
+        }
     }
 }
 

@@ -1311,6 +1311,7 @@ CMakeFiles/kanban_gui.dir/gui/include/moc_MainWindow.cpp.obj: gui/include/moc_Ma
   C:/Qt/6.9.3/mingw_64/include/QtCore/q23type_traits.h \
   C:/Qt/6.9.3/mingw_64/include/QtCore/q23utility.h \
   C:/Qt/6.9.3/mingw_64/include/QtCore/qabstracteventdispatcher.h \
+  C:/Qt/6.9.3/mingw_64/include/QtCore/qabstractitemmodel.h \
   C:/Qt/6.9.3/mingw_64/include/QtCore/qalgorithms.h \
   C:/Qt/6.9.3/mingw_64/include/QtCore/qanystringview.h \
   C:/Qt/6.9.3/mingw_64/include/QtCore/qarraydata.h \
@@ -1367,6 +1368,7 @@ CMakeFiles/kanban_gui.dir/gui/include/moc_MainWindow.cpp.obj: gui/include/moc_Ma
   C:/Qt/6.9.3/mingw_64/include/QtCore/qhashfunctions.h \
   C:/Qt/6.9.3/mingw_64/include/QtCore/qiodevice.h \
   C:/Qt/6.9.3/mingw_64/include/QtCore/qiodevicebase.h \
+  C:/Qt/6.9.3/mingw_64/include/QtCore/qitemselectionmodel.h \
   C:/Qt/6.9.3/mingw_64/include/QtCore/qiterable.h \
   C:/Qt/6.9.3/mingw_64/include/QtCore/qiterator.h \
   C:/Qt/6.9.3/mingw_64/include/QtCore/qlatin1stringview.h \
@@ -1394,6 +1396,7 @@ CMakeFiles/kanban_gui.dir/gui/include/moc_MainWindow.cpp.obj: gui/include/moc_Ma
   C:/Qt/6.9.3/mingw_64/include/QtCore/qprocessordetection.h \
   C:/Qt/6.9.3/mingw_64/include/QtCore/qrect.h \
   C:/Qt/6.9.3/mingw_64/include/QtCore/qrefcount.h \
+  C:/Qt/6.9.3/mingw_64/include/QtCore/qregularexpression.h \
   C:/Qt/6.9.3/mingw_64/include/QtCore/qscopedpointer.h \
   C:/Qt/6.9.3/mingw_64/include/QtCore/qscopeguard.h \
   C:/Qt/6.9.3/mingw_64/include/QtCore/qset.h \
@@ -1475,6 +1478,7 @@ CMakeFiles/kanban_gui.dir/gui/include/moc_MainWindow.cpp.obj: gui/include/moc_Ma
   C:/Qt/6.9.3/mingw_64/include/QtGui/qkeysequence.h \
   C:/Qt/6.9.3/mingw_64/include/QtGui/qpaintdevice.h \
   C:/Qt/6.9.3/mingw_64/include/QtGui/qpalette.h \
+  C:/Qt/6.9.3/mingw_64/include/QtGui/qpen.h \
   C:/Qt/6.9.3/mingw_64/include/QtGui/qpixelformat.h \
   C:/Qt/6.9.3/mingw_64/include/QtGui/qpixmap.h \
   C:/Qt/6.9.3/mingw_64/include/QtGui/qpointingdevice.h \
@@ -1484,27 +1488,43 @@ CMakeFiles/kanban_gui.dir/gui/include/moc_MainWindow.cpp.obj: gui/include/moc_Ma
   C:/Qt/6.9.3/mingw_64/include/QtGui/qrgba64.h \
   C:/Qt/6.9.3/mingw_64/include/QtGui/qscreen.h \
   C:/Qt/6.9.3/mingw_64/include/QtGui/qscreen_platform.h \
+  C:/Qt/6.9.3/mingw_64/include/QtGui/qtextcursor.h \
+  C:/Qt/6.9.3/mingw_64/include/QtGui/qtextdocument.h \
+  C:/Qt/6.9.3/mingw_64/include/QtGui/qtextformat.h \
+  C:/Qt/6.9.3/mingw_64/include/QtGui/qtextoption.h \
   C:/Qt/6.9.3/mingw_64/include/QtGui/qtgui-config.h \
   C:/Qt/6.9.3/mingw_64/include/QtGui/qtguiexports.h \
   C:/Qt/6.9.3/mingw_64/include/QtGui/qtguiglobal.h \
   C:/Qt/6.9.3/mingw_64/include/QtGui/qtransform.h \
+  C:/Qt/6.9.3/mingw_64/include/QtGui/qvalidator.h \
   C:/Qt/6.9.3/mingw_64/include/QtGui/qvector2d.h \
   C:/Qt/6.9.3/mingw_64/include/QtGui/qvectornd.h \
   C:/Qt/6.9.3/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.9.3/mingw_64/include/QtGui/qwindowdefs_win.h \
   C:/Qt/6.9.3/mingw_64/include/QtWidgets/QApplication \
+  C:/Qt/6.9.3/mingw_64/include/QtWidgets/QComboBox \
+  C:/Qt/6.9.3/mingw_64/include/QtWidgets/QDialog \
+  C:/Qt/6.9.3/mingw_64/include/QtWidgets/QDialogButtonBox \
   C:/Qt/6.9.3/mingw_64/include/QtWidgets/QFileDialog \
   C:/Qt/6.9.3/mingw_64/include/QtWidgets/QHBoxLayout \
+  C:/Qt/6.9.3/mingw_64/include/QtWidgets/QLineEdit \
+  C:/Qt/6.9.3/mingw_64/include/QtWidgets/QListWidget \
   C:/Qt/6.9.3/mingw_64/include/QtWidgets/QMainWindow \
   C:/Qt/6.9.3/mingw_64/include/QtWidgets/QMenu \
   C:/Qt/6.9.3/mingw_64/include/QtWidgets/QMenuBar \
   C:/Qt/6.9.3/mingw_64/include/QtWidgets/QMessageBox \
   C:/Qt/6.9.3/mingw_64/include/QtWidgets/QScrollArea \
   C:/Qt/6.9.3/mingw_64/include/QtWidgets/QStatusBar \
+  C:/Qt/6.9.3/mingw_64/include/QtWidgets/QTextEdit \
   C:/Qt/6.9.3/mingw_64/include/QtWidgets/QWidget \
+  C:/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+  C:/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractitemview.h \
   C:/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+  C:/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractslider.h \
+  C:/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractspinbox.h \
   C:/Qt/6.9.3/mingw_64/include/QtWidgets/qapplication.h \
   C:/Qt/6.9.3/mingw_64/include/QtWidgets/qboxlayout.h \
+  C:/Qt/6.9.3/mingw_64/include/QtWidgets/qcombobox.h \
   C:/Qt/6.9.3/mingw_64/include/QtWidgets/qdialog.h \
   C:/Qt/6.9.3/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
   C:/Qt/6.9.3/mingw_64/include/QtWidgets/qfiledialog.h \
@@ -1512,14 +1532,23 @@ CMakeFiles/kanban_gui.dir/gui/include/moc_MainWindow.cpp.obj: gui/include/moc_Ma
   C:/Qt/6.9.3/mingw_64/include/QtWidgets/qgridlayout.h \
   C:/Qt/6.9.3/mingw_64/include/QtWidgets/qlayout.h \
   C:/Qt/6.9.3/mingw_64/include/QtWidgets/qlayoutitem.h \
+  C:/Qt/6.9.3/mingw_64/include/QtWidgets/qlineedit.h \
+  C:/Qt/6.9.3/mingw_64/include/QtWidgets/qlistview.h \
+  C:/Qt/6.9.3/mingw_64/include/QtWidgets/qlistwidget.h \
   C:/Qt/6.9.3/mingw_64/include/QtWidgets/qmainwindow.h \
   C:/Qt/6.9.3/mingw_64/include/QtWidgets/qmenu.h \
   C:/Qt/6.9.3/mingw_64/include/QtWidgets/qmenubar.h \
   C:/Qt/6.9.3/mingw_64/include/QtWidgets/qmessagebox.h \
+  C:/Qt/6.9.3/mingw_64/include/QtWidgets/qrubberband.h \
   C:/Qt/6.9.3/mingw_64/include/QtWidgets/qscrollarea.h \
   C:/Qt/6.9.3/mingw_64/include/QtWidgets/qsizepolicy.h \
+  C:/Qt/6.9.3/mingw_64/include/QtWidgets/qslider.h \
   C:/Qt/6.9.3/mingw_64/include/QtWidgets/qstatusbar.h \
+  C:/Qt/6.9.3/mingw_64/include/QtWidgets/qstyle.h \
+  C:/Qt/6.9.3/mingw_64/include/QtWidgets/qstyleoption.h \
+  C:/Qt/6.9.3/mingw_64/include/QtWidgets/qtabbar.h \
   C:/Qt/6.9.3/mingw_64/include/QtWidgets/qtabwidget.h \
+  C:/Qt/6.9.3/mingw_64/include/QtWidgets/qtextedit.h \
   C:/Qt/6.9.3/mingw_64/include/QtWidgets/qtwidgets-config.h \
   C:/Qt/6.9.3/mingw_64/include/QtWidgets/qtwidgetsexports.h \
   C:/Qt/6.9.3/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -1558,6 +1587,7 @@ CMakeFiles/kanban_gui.dir/gui/include/moc_MainWindow.cpp.obj: gui/include/moc_Ma
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fs_fwd.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fs_ops.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fs_path.h \
+  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fstream.tcc \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/functexcept.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/functional_hash.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/hash_bytes.h \
@@ -1661,6 +1691,7 @@ CMakeFiles/kanban_gui.dir/gui/include/moc_MainWindow.cpp.obj: gui/include/moc_Ma
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/string_conversions.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/type_traits.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/filesystem \
+  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/fstream \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/functional \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/initializer_list \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iomanip \
@@ -1713,8 +1744,10 @@ CMakeFiles/kanban_gui.dir/gui/include/moc_MainWindow.cpp.obj: gui/include/moc_Ma
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/vector \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/version \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/atomic_word.h \
+  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++allocator.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
+  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++locale.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/cpu_defines.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/ctype_base.h \
@@ -1781,8 +1814,11 @@ CMakeFiles/kanban_gui.dir/gui/include/moc_MainWindow.cpp.obj: gui/include/moc_Ma
   X:/POO\ -\ PROJETO\ FINAL/design/include/Board.h \
   X:/POO\ -\ PROJETO\ FINAL/design/include/Card.h \
   X:/POO\ -\ PROJETO\ FINAL/design/include/Column.h \
+  X:/POO\ -\ PROJETO\ FINAL/design/include/ISerializer.h \
+  X:/POO\ -\ PROJETO\ FINAL/design/include/JsonSerializer.h \
   X:/POO\ -\ PROJETO\ FINAL/design/include/User.h \
   X:/POO\ -\ PROJETO\ FINAL/gui/include/BoardWidget.h \
+  X:/POO\ -\ PROJETO\ FINAL/gui/include/CardDialog.h \
   X:/POO\ -\ PROJETO\ FINAL/gui/include/MainWindow.h
 
 CMakeFiles/kanban_gui.dir/gui/src/BoardWidget.cpp.obj: X:/POO\ -\ PROJETO\ FINAL/gui/src/BoardWidget.cpp \
@@ -3411,6 +3447,7 @@ CMakeFiles/kanban_gui.dir/gui/src/MainWindow.cpp.obj: X:/POO\ -\ PROJETO\ FINAL/
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fs_fwd.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fs_ops.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fs_path.h \
+  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fstream.tcc \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/functexcept.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/functional_hash.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/hash_bytes.h \
@@ -3514,6 +3551,7 @@ CMakeFiles/kanban_gui.dir/gui/src/MainWindow.cpp.obj: X:/POO\ -\ PROJETO\ FINAL/
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/string_conversions.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/type_traits.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/filesystem \
+  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/fstream \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/functional \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/initializer_list \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iomanip \
@@ -3567,8 +3605,10 @@ CMakeFiles/kanban_gui.dir/gui/src/MainWindow.cpp.obj: X:/POO\ -\ PROJETO\ FINAL/
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/vector \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/version \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/atomic_word.h \
+  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++allocator.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
+  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++locale.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/cpu_defines.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/ctype_base.h \
@@ -3635,6 +3675,8 @@ CMakeFiles/kanban_gui.dir/gui/src/MainWindow.cpp.obj: X:/POO\ -\ PROJETO\ FINAL/
   X:/POO\ -\ PROJETO\ FINAL/design/include/Board.h \
   X:/POO\ -\ PROJETO\ FINAL/design/include/Card.h \
   X:/POO\ -\ PROJETO\ FINAL/design/include/Column.h \
+  X:/POO\ -\ PROJETO\ FINAL/design/include/ISerializer.h \
+  X:/POO\ -\ PROJETO\ FINAL/design/include/JsonSerializer.h \
   X:/POO\ -\ PROJETO\ FINAL/design/include/User.h \
   X:/POO\ -\ PROJETO\ FINAL/gui/include/BoardWidget.h \
   X:/POO\ -\ PROJETO\ FINAL/gui/include/CardDialog.h \
@@ -3928,6 +3970,7 @@ CMakeFiles/kanban_gui.dir/gui/src/main.cpp.obj: X:/POO\ -\ PROJETO\ FINAL/gui/sr
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fs_fwd.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fs_ops.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fs_path.h \
+  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fstream.tcc \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/functexcept.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/functional_hash.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/hash_bytes.h \
@@ -4031,6 +4074,7 @@ CMakeFiles/kanban_gui.dir/gui/src/main.cpp.obj: X:/POO\ -\ PROJETO\ FINAL/gui/sr
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/string_conversions.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/type_traits.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/filesystem \
+  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/fstream \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/functional \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/initializer_list \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iomanip \
@@ -4084,8 +4128,10 @@ CMakeFiles/kanban_gui.dir/gui/src/main.cpp.obj: X:/POO\ -\ PROJETO\ FINAL/gui/sr
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/vector \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/version \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/atomic_word.h \
+  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++allocator.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
+  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++locale.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/cpu_defines.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/ctype_base.h \
@@ -4152,6 +4198,8 @@ CMakeFiles/kanban_gui.dir/gui/src/main.cpp.obj: X:/POO\ -\ PROJETO\ FINAL/gui/sr
   X:/POO\ -\ PROJETO\ FINAL/design/include/Board.h \
   X:/POO\ -\ PROJETO\ FINAL/design/include/Card.h \
   X:/POO\ -\ PROJETO\ FINAL/design/include/Column.h \
+  X:/POO\ -\ PROJETO\ FINAL/design/include/ISerializer.h \
+  X:/POO\ -\ PROJETO\ FINAL/design/include/JsonSerializer.h \
   X:/POO\ -\ PROJETO\ FINAL/design/include/User.h \
   X:/POO\ -\ PROJETO\ FINAL/gui/include/BoardWidget.h \
   X:/POO\ -\ PROJETO\ FINAL/gui/include/CardDialog.h \
@@ -4392,6 +4440,8 @@ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stddef.h:
 
 C:/Qt/6.9.3/mingw_64/include/QtCore/qline.h:
 
+C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/fstream:
+
 C:/Qt/6.9.3/mingw_64/include/QtCore/qlist.h:
 
 C:/Qt/6.9.3/mingw_64/include/QtCore/qlocale.h:
@@ -4443,6 +4493,8 @@ C:/Qt/6.9.3/mingw_64/include/QtCore/qobject_impl.h:
 C:/Qt/6.9.3/mingw_64/include/QtCore/qobjectdefs.h:
 
 C:/Qt/6.9.3/mingw_64/include/QtCore/qobjectdefs_impl.h:
+
+X:/POO\ -\ PROJETO\ FINAL/design/include/JsonSerializer.h:
 
 C:/Qt/6.9.3/mingw_64/include/QtCore/qoverload.h:
 
@@ -5166,6 +5218,8 @@ C:/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractitemview.h:
 
 C:/Qt/6.9.3/mingw_64/include/QtWidgets/qabstractspinbox.h:
 
+C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++io.h:
+
 C:/Qt/6.9.3/mingw_64/include/QtWidgets/qdialog.h:
 
 C:/Qt/6.9.3/mingw_64/include/QtWidgets/qdialogbuttonbox.h:
@@ -5214,6 +5268,8 @@ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fs_f
 
 C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fs_ops.h:
 
+C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fstream.tcc:
+
 C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc:
 
 C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets.h:
@@ -5237,6 +5293,10 @@ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ostream:
 X:/POO\ -\ PROJETO\ FINAL/gui/src/MainWindow.cpp:
 
 C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/sstream:
+
+C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h:
+
+X:/POO\ -\ PROJETO\ FINAL/design/include/ISerializer.h:
 
 X:/POO\ -\ PROJETO\ FINAL/gui/src/BoardWidget.cpp:
 
