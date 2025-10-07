@@ -82,7 +82,7 @@ cmake --build build-gui
 
 ## 🎬 Demonstração
 
-[📹 **Assista ao Vídeo Demonstrativo**]([https://drive.google.com/link-para-video](https://drive.google.com/file/d/1lQz9pfNeXQ1KdbzlCuYAZtlPy_xtxkjK/view?usp=sharing))
+[📹 **Assista ao Vídeo Demonstrativo**](https://drive.google.com/link-para-video](https://drive.google.com/file/d/1lQz9pfNeXQ1KdbzlCuYAZtlPy_xtxkjK/view?usp=sharing)
 
 **Funcionalidades demonstradas:**
 - Criação e edição de cartões
