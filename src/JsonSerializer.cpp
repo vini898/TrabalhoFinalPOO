@@ -5,6 +5,7 @@
 #include "User.h"
 #include <sstream>
 #include <iostream>
+#include <algorithm>
 
 namespace kanban {
 
@@ -104,7 +105,7 @@ void JsonSerializer::deserializeFromStream(std::istream& is, Board& outBoard) co
         fullContent += line + "\n";
     }
     
-    std::cout << "Desserializando JSON..." << std::endl;
+    std::cout << "=== INICIANDO DESSERIALIZAÇÃO FUNCIONAL ===" << std::endl;
     
     // Limpar board atual
     while (!outBoard.columns().empty()) {
@@ -113,224 +114,216 @@ void JsonSerializer::deserializeFromStream(std::istream& is, Board& outBoard) co
     while (!outBoard.cards().empty()) {
         outBoard.deleteCard(outBoard.cards()[0].id());
     }
+    while (!outBoard.users().empty()) {
+        outBoard.removeUser(outBoard.users()[0].id());
+    }
     
-    // Parse básico - vamos processar seções
-    size_t pos = 0;
-    
-    // 1. Extrair título
-    size_t titleStart = fullContent.find("\"title\": \"");
-    if (titleStart != std::string::npos) {
-        titleStart += 10;
-        size_t titleEnd = fullContent.find("\"", titleStart);
+    // 1. Extrair e configurar título
+    size_t titlePos = fullContent.find("\"title\": \"");
+    if (titlePos != std::string::npos) {
+        titlePos += 10; // "\"title\": \""
+        size_t titleEnd = fullContent.find("\"", titlePos);
         if (titleEnd != std::string::npos) {
-            std::string title = fullContent.substr(titleStart, titleEnd - titleStart);
+            std::string title = fullContent.substr(titlePos, titleEnd - titlePos);
             outBoard.setTitle(title);
-            std::cout << "Título: " << title << std::endl;
+            std::cout << "Título definido: " << title << std::endl;
         }
     }
     
-    // 2. Extrair e criar usuários
-    std::vector<std::uint64_t> userIds;
+    // 2. Extrair e criar USUÁRIOS
     size_t usersStart = fullContent.find("\"users\": [");
     if (usersStart != std::string::npos) {
         usersStart += 9;
         size_t usersEnd = fullContent.find("]", usersStart);
         if (usersEnd != std::string::npos) {
             std::string usersSection = fullContent.substr(usersStart, usersEnd - usersStart);
-            size_t userPos = 0;
             
-            while ((userPos = usersSection.find('{', userPos)) != std::string::npos) {
-                size_t userEnd = usersSection.find('}', userPos);
+            size_t userStart = 0;
+            while ((userStart = usersSection.find('{', userStart)) != std::string::npos) {
+                size_t userEnd = usersSection.find('}', userStart);
                 if (userEnd == std::string::npos) break;
                 
-                std::string userStr = usersSection.substr(userPos, userEnd - userPos + 1);
+                std::string userStr = usersSection.substr(userStart, userEnd - userStart + 1);
                 
-                // Extrair dados do usuário
-                size_t idStart = userStr.find("\"id\": ");
-                size_t nameStart = userStr.find("\"name\": \"");
-                size_t emailStart = userStr.find("\"email\": \"");
+                // Extrair ID, nome e email
+                size_t idPos = userStr.find("\"id\": ");
+                size_t namePos = userStr.find("\"name\": \"");
+                size_t emailPos = userStr.find("\"email\": \"");
                 
-                if (idStart != std::string::npos && nameStart != std::string::npos) {
-                    idStart += 6;
-                    nameStart += 9;
-                    emailStart += 10;
+                if (idPos != std::string::npos && namePos != std::string::npos) {
+                    idPos += 6;
+                    namePos += 9;
+                    emailPos += 10;
                     
-                    size_t idEnd = userStr.find_first_of(",}", idStart);
-                    size_t nameEnd = userStr.find("\"", nameStart);
-                    size_t emailEnd = userStr.find("\"", emailStart);
+                    size_t idEnd = userStr.find_first_of(",}", idPos);
+                    size_t nameEnd = userStr.find("\"", namePos);
+                    size_t emailEnd = userStr.find("\"", emailPos);
                     
                     if (idEnd != std::string::npos && nameEnd != std::string::npos) {
-                        std::uint64_t id = std::stoull(userStr.substr(idStart, idEnd - idStart));
-                        std::string name = userStr.substr(nameStart, nameEnd - nameStart);
-                        std::string email = (emailStart != std::string::npos && emailEnd != std::string::npos) 
-                                          ? userStr.substr(emailStart, emailEnd - emailStart) 
+                        std::uint64_t id = std::stoull(userStr.substr(idPos, idEnd - idPos));
+                        std::string name = userStr.substr(namePos, nameEnd - namePos);
+                        std::string email = (emailPos < userStr.length() && emailEnd != std::string::npos) 
+                                          ? userStr.substr(emailPos, emailEnd - emailPos) 
                                           : "";
                         
                         // Adicionar usuário
-                        outBoard.addUser(User(id, name, email));
-                        userIds.push_back(id);
+                        outBoard.addUser(kanban::User(id, name, email));
                         std::cout << "Usuário criado: " << name << " (ID: " << id << ")" << std::endl;
                     }
                 }
                 
-                userPos = userEnd + 1;
+                userStart = userEnd + 1;
             }
         }
     }
     
-    // 3. Extrair e criar cartões
-    std::vector<std::uint64_t> cardIds;
+    // 3. Extrair e criar CARTÕES
+    std::vector<std::uint64_t> allCardIds;
     size_t cardsStart = fullContent.find("\"cards\": [");
     if (cardsStart != std::string::npos) {
         cardsStart += 9;
         size_t cardsEnd = fullContent.find("]", cardsStart);
         if (cardsEnd != std::string::npos) {
             std::string cardsSection = fullContent.substr(cardsStart, cardsEnd - cardsStart);
-            size_t cardPos = 0;
             
-            while ((cardPos = cardsSection.find('{', cardPos)) != std::string::npos) {
-                size_t cardEnd = cardsSection.find('}', cardPos);
+            size_t cardStart = 0;
+            while ((cardStart = cardsSection.find('{', cardStart)) != std::string::npos) {
+                size_t cardEnd = cardsSection.find('}', cardStart);
                 if (cardEnd == std::string::npos) break;
                 
-                std::string cardStr = cardsSection.substr(cardPos, cardEnd - cardPos + 1);
+                std::string cardStr = cardsSection.substr(cardStart, cardEnd - cardStart + 1);
                 
                 // Extrair dados do cartão
-                size_t idStart = cardStr.find("\"id\": ");
-                size_t titleStart = cardStr.find("\"title\": \"");
-                size_t descStart = cardStr.find("\"description\": \"");
-                size_t assigneeStart = cardStr.find("\"assignee_id\": ");
-                size_t priorityStart = cardStr.find("\"priority\": ");
+                size_t idPos = cardStr.find("\"id\": ");
+                size_t titlePos = cardStr.find("\"title\": \"");
+                size_t descPos = cardStr.find("\"description\": \"");
+                size_t assigneePos = cardStr.find("\"assignee_id\": ");
+                size_t priorityPos = cardStr.find("\"priority\": ");
                 
-                if (idStart != std::string::npos && titleStart != std::string::npos) {
-                    idStart += 6;
-                    titleStart += 10;
-                    descStart += 16;
-                    assigneeStart += 15;
-                    priorityStart += 13;
+                if (idPos != std::string::npos && titlePos != std::string::npos) {
+                    idPos += 6;
+                    titlePos += 10;
+                    descPos += 16;
+                    assigneePos += 15;
+                    priorityPos += 13;
                     
-                    size_t idEnd = cardStr.find_first_of(",}", idStart);
-                    size_t titleEnd = cardStr.find("\"", titleStart);
-                    size_t descEnd = cardStr.find("\"", descStart);
+                    size_t idEnd = cardStr.find_first_of(",}", idPos);
+                    size_t titleEnd = cardStr.find("\"", titlePos);
+                    size_t descEnd = cardStr.find("\"", descPos);
                     
                     if (idEnd != std::string::npos && titleEnd != std::string::npos) {
-                        std::uint64_t id = std::stoull(cardStr.substr(idStart, idEnd - idStart));
-                        std::string title = cardStr.substr(titleStart, titleEnd - titleStart);
-                        std::string description = (descStart != std::string::npos && descEnd != std::string::npos)
-                                                ? cardStr.substr(descStart, descEnd - descStart)
+                        std::uint64_t id = std::stoull(cardStr.substr(idPos, idEnd - idPos));
+                        std::string title = cardStr.substr(titlePos, titleEnd - titlePos);
+                        std::string description = (descPos < cardStr.length() && descEnd != std::string::npos)
+                                                ? cardStr.substr(descPos, descEnd - descPos)
                                                 : "";
                         
                         // Criar cartão
                         auto& card = outBoard.createCard(title);
-                        // Forçar o ID correto (já que createCard gera novo ID)
-                        // Em uma implementação real, precisaríamos de um método setId
                         card.setDescription(description);
+                        allCardIds.push_back(id);
                         
-                        // Extrair assignee
-                        if (assigneeStart != std::string::npos) {
-                            size_t assigneeEnd = cardStr.find_first_of(",}", assigneeStart);
+                        // Configurar assignee
+                        if (assigneePos < cardStr.length()) {
+                            size_t assigneeEnd = cardStr.find_first_of(",}", assigneePos);
                             if (assigneeEnd != std::string::npos) {
-                                std::uint64_t assigneeId = std::stoull(cardStr.substr(assigneeStart, assigneeEnd - assigneeStart));
+                                std::uint64_t assigneeId = std::stoull(cardStr.substr(assigneePos, assigneeEnd - assigneePos));
                                 card.setAssigneeId(assigneeId);
                             }
                         }
                         
-                        // Extrair priority
-                        if (priorityStart != std::string::npos) {
-                            size_t priorityEnd = cardStr.find_first_of(",}", priorityStart);
+                        // Configurar priority
+                        if (priorityPos < cardStr.length()) {
+                            size_t priorityEnd = cardStr.find_first_of(",}", priorityPos);
                             if (priorityEnd != std::string::npos) {
-                                int priority = std::stoi(cardStr.substr(priorityStart, priorityEnd - priorityStart));
+                                int priority = std::stoi(cardStr.substr(priorityPos, priorityEnd - priorityPos));
                                 card.setPriority(priority);
                             }
                         }
                         
-                        // Extrair tags
+                        // Extrair e adicionar tags
                         size_t tagsStart = cardStr.find("\"tags\": [");
                         if (tagsStart != std::string::npos) {
                             tagsStart += 9;
                             size_t tagsEnd = cardStr.find("]", tagsStart);
                             if (tagsEnd != std::string::npos) {
-                                std::string tagsSection = cardStr.substr(tagsStart, tagsEnd - tagsStart);
+                                std::string tagsStr = cardStr.substr(tagsStart, tagsEnd - tagsStart);
                                 size_t tagPos = 0;
                                 
-                                while ((tagPos = tagsSection.find('\"', tagPos)) != std::string::npos) {
-                                    size_t tagEnd = tagsSection.find('\"', tagPos + 1);
+                                while ((tagPos = tagsStr.find('\"', tagPos)) != std::string::npos) {
+                                    size_t tagEnd = tagsStr.find('\"', tagPos + 1);
                                     if (tagEnd == std::string::npos) break;
                                     
-                                    std::string tag = tagsSection.substr(tagPos + 1, tagEnd - tagPos - 1);
+                                    std::string tag = tagsStr.substr(tagPos + 1, tagEnd - tagPos - 1);
                                     card.addTag(tag);
-                                    std::cout << "  Tag adicionada: " << tag << std::endl;
-                                    
                                     tagPos = tagEnd + 1;
                                 }
                             }
                         }
                         
-                        cardIds.push_back(id);
                         std::cout << "Cartão criado: " << title << " (ID: " << id << ")" << std::endl;
                     }
                 }
                 
-                cardPos = cardEnd + 1;
+                cardStart = cardEnd + 1;
             }
         }
     }
     
-    // 4. Extrair e criar colunas
-    std::vector<std::pair<std::uint64_t, std::vector<std::uint64_t>>> columnCards;
+    // 4. Extrair e criar COLUNAS e associar cartões
     size_t columnsStart = fullContent.find("\"columns\": [");
     if (columnsStart != std::string::npos) {
         columnsStart += 11;
         size_t columnsEnd = fullContent.find("]", columnsStart);
         if (columnsEnd != std::string::npos) {
             std::string columnsSection = fullContent.substr(columnsStart, columnsEnd - columnsStart);
-            size_t columnPos = 0;
             
-            while ((columnPos = columnsSection.find('{', columnPos)) != std::string::npos) {
-                size_t columnEnd = columnsSection.find('}', columnPos);
+            size_t columnStart = 0;
+            while ((columnStart = columnsSection.find('{', columnStart)) != std::string::npos) {
+                size_t columnEnd = columnsSection.find('}', columnStart);
                 if (columnEnd == std::string::npos) break;
                 
-                std::string columnStr = columnsSection.substr(columnPos, columnEnd - columnPos + 1);
+                std::string columnStr = columnsSection.substr(columnStart, columnEnd - columnStart + 1);
                 
                 // Extrair dados da coluna
-                size_t nameStart = columnStr.find("\"name\": \"");
-                size_t orderStart = columnStr.find("\"order_index\": ");
-                size_t cardsStart = columnStr.find("\"card_ids\": [");
+                size_t namePos = columnStr.find("\"name\": \"");
+                size_t orderPos = columnStr.find("\"order_index\": ");
+                size_t cardsPos = columnStr.find("\"card_ids\": [");
                 
-                if (nameStart != std::string::npos && orderStart != std::string::npos) {
-                    nameStart += 9;
-                    orderStart += 15;
-                    cardsStart += 13;
+                if (namePos != std::string::npos && orderPos != std::string::npos) {
+                    namePos += 9;
+                    orderPos += 15;
+                    cardsPos += 13;
                     
-                    size_t nameEnd = columnStr.find("\"", nameStart);
-                    size_t orderEnd = columnStr.find_first_of(",}", orderStart);
-                    size_t cardsEnd = columnStr.find("]", cardsStart);
+                    size_t nameEnd = columnStr.find("\"", namePos);
+                    size_t orderEnd = columnStr.find_first_of(",}", orderPos);
+                    size_t cardsEnd = columnStr.find("]", cardsPos);
                     
                     if (nameEnd != std::string::npos && orderEnd != std::string::npos) {
-                        std::string name = columnStr.substr(nameStart, nameEnd - nameStart);
-                        int orderIndex = std::stoi(columnStr.substr(orderStart, orderEnd - orderStart));
+                        std::string name = columnStr.substr(namePos, nameEnd - namePos);
+                        int orderIndex = std::stoi(columnStr.substr(orderPos, orderEnd - orderPos));
                         
                         // Adicionar coluna
                         auto& column = outBoard.addColumn(name, orderIndex);
                         std::cout << "Coluna criada: " << name << " (order: " << orderIndex << ")" << std::endl;
                         
-                        // Extrair card IDs da coluna
-                        std::vector<std::uint64_t> columnCardIds;
-                        if (cardsStart != std::string::npos && cardsEnd != std::string::npos) {
-                            std::string cardsStr = columnStr.substr(cardsStart, cardsEnd - cardsStart);
-                            size_t numPos = 0;
+                        // Associar cartões à coluna
+                        if (cardsPos < columnStr.length() && cardsEnd != std::string::npos) {
+                            std::string cardsStr = columnStr.substr(cardsPos, cardsEnd - cardsPos);
                             
+                            // Extrair IDs dos cartões
+                            size_t numPos = 0;
                             while (numPos < cardsStr.length()) {
                                 if (std::isdigit(cardsStr[numPos])) {
                                     size_t numEnd = cardsStr.find_first_not_of("0123456789", numPos);
                                     if (numEnd == std::string::npos) numEnd = cardsStr.length();
                                     
                                     std::uint64_t cardId = std::stoull(cardsStr.substr(numPos, numEnd - numPos));
-                                    columnCardIds.push_back(cardId);
                                     
-                                    // Adicionar cartão à coluna
-                                    if (outBoard.findCard(cardId)) {
+                                    // Verificar se o cartão existe e adicionar à coluna
+                                    if (std::find(allCardIds.begin(), allCardIds.end(), cardId) != allCardIds.end()) {
                                         column.addCard(cardId);
-                                        std::cout << "  Cartão " << cardId << " adicionado à coluna" << std::endl;
+                                        std::cout << "  + Cartão " << cardId << " adicionado à coluna" << std::endl;
                                     }
                                     
                                     numPos = numEnd;
@@ -339,20 +332,18 @@ void JsonSerializer::deserializeFromStream(std::istream& is, Board& outBoard) co
                                 }
                             }
                         }
-                        
-                        columnCards.emplace_back(column.id(), std::move(columnCardIds));
                     }
                 }
                 
-                columnPos = columnEnd + 1;
+                columnStart = columnEnd + 1;
             }
         }
     }
     
-    std::cout << "Desserialização completa!" << std::endl;
-    std::cout << " - Usuários: " << userIds.size() << std::endl;
-    std::cout << " - Cartões: " << cardIds.size() << std::endl;
-    std::cout << " - Colunas: " << columnCards.size() << std::endl;
+    std::cout << "=== DESSERIALIZAÇÃO COMPLETA ===" << std::endl;
+    std::cout << "Resumo: " << outBoard.users().size() << " usuários, " 
+              << outBoard.cards().size() << " cartões, " 
+              << outBoard.columns().size() << " colunas" << std::endl;
 }
 
 } // namespace kanban

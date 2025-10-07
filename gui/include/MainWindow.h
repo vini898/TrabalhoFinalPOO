@@ -11,8 +11,6 @@
 #include "BoardWidget.h"
 #include "../../design/include/Board.h"
 #include "CardDialog.h"
-#include "JsonSerializer.h"  
-#include <fstream>           
 
 class MainWindow : public QMainWindow
 {
@@ -26,14 +24,14 @@ public:
     void onOpenBoard();
     void onSaveBoard();
     void onAbout();
+    void onNewCard();
+    void onShowHistory();  // ← NOVA FUNÇÃO SIMPLES
 
 private:
     void setupUI();
     void setupMenus();
     void setupConnections();
     void setupDemoData();
-    void onNewCard();
-
 
     kanban::Board m_board;
     BoardWidget* m_boardWidget;
@@ -43,4 +41,5 @@ private:
     QAction* m_saveBoardAction;
     QAction* m_exitAction;
     QAction* m_aboutAction;
+    QAction* m_showHistoryAction;  // ← NOVA AÇÃO
 };

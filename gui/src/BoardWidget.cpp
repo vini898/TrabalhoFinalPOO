@@ -226,13 +226,18 @@ void BoardWidget::dropEvent(QDropEvent* event) {
         if (m_board.moveCard(fromColumnId, toColumnId, cardId, 0)) {
             refreshColumns();
             
-            // Registrar no activity log
+            // Registrar no activity log - CORRIGIDO
             kanban::ActivityLog::Entry entry;
             entry.timestamp = std::chrono::system_clock::now();
             entry.action = "MOVE_CARD";
-            entry.details = "Cartão " + std::to_string(cardId) + 
-                           " movido da coluna " + std::to_string(fromColumnId) + 
-                           " para " + std::to_string(toColumnId);
+            
+            // CORREÇÃO: Usar findColumn para obter o nome da coluna destino
+            if (auto* targetCol = m_board.findColumn(toColumnId)) {
+                entry.details = "Cartão movido para: " + targetCol->name();
+            } else {
+                entry.details = "Cartão movido para coluna ID: " + std::to_string(toColumnId);
+            }
+            
             m_board.activityLog().append(std::move(entry));
             
             event->acceptProposedAction();

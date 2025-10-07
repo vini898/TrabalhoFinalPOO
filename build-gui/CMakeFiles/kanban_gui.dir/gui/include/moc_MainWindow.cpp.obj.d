@@ -525,12 +525,6 @@ CMakeFiles/kanban_gui.dir/gui/include/moc_MainWindow.cpp.obj: \
  C:/Qt/6.9.3/mingw_64/include/QtCore/qitemselectionmodel.h \
  C:/Qt/6.9.3/mingw_64/include/QtWidgets/QDialogButtonBox \
  C:/Qt/6.9.3/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
- X:/POO\ -\ PROJETO\ FINAL/design/include/JsonSerializer.h \
- X:/POO\ -\ PROJETO\ FINAL/design/include/ISerializer.h \
- C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/fstream \
- C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
- C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
- C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fstream.tcc \
  C:/Qt/6.9.3/mingw_64/include/QtCore/qtmochelpers.h \
  C:/Qt/6.9.3/mingw_64/include/QtCore/qtmocconstants.h \
  C:/Qt/6.9.3/mingw_64/include/QtCore/q20algorithm.h \
