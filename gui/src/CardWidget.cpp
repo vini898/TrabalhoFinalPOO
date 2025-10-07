@@ -4,104 +4,123 @@
 
 CardWidget::CardWidget(const kanban::Card& card, QWidget* parent) 
     : QFrame(parent), m_card(card) {
-    std::cout << "CardWidget: Criando para cartão '" << card.title() << "'" << std::endl;
     setupUI();
-    std::cout << "CardWidget: Setup completo" << std::endl;
 }
 
 void CardWidget::setupUI() {
-    std::cout << "CardWidget: Configurando UI..." << std::endl;
+    // Frame estilo Trello
+    this->setFrameStyle(QFrame::NoFrame);
+    this->setMinimumSize(220, 80);
+    this->setMaximumSize(280, 150);
     
-    setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
-    setLineWidth(1);
-    setMinimumHeight(80);
-    setMaximumHeight(120);
-    setStyleSheet(
-        "CardWidget { "
-        "   background-color: #ffffff; "  // ← Mudei para branco sólido
-        "   border-radius: 4px; "
-        "   padding: 8px; "
-        "   border: 2px solid #007acc; "  // ← Borda mais visível
+    // CSS moderno - estilo Kanban
+    this->setStyleSheet(
+        "CardWidget {"
+        "   background-color: #ffffff;"
+        "   border: 1px solid #ddd;"
+        "   border-radius: 8px;"
+        "   padding: 8px;"
+        "   margin: 4px;"
+        "   box-shadow: 0 1px 3px rgba(0,0,0,0.1);"
         "}"
-        "CardWidget:hover { "
-        "   background-color: #f0f8ff; "
-        "   border: 2px solid #005a9e; "
+        "CardWidget:hover {"
+        "   background-color: #f9f9f9;"
+        "   border: 1px solid #ccc;"
+        "   box-shadow: 0 2px 5px rgba(0,0,0,0.15);"
         "}"
     );
     
     QVBoxLayout* layout = new QVBoxLayout(this);
-    layout->setSpacing(4);
-    layout->setContentsMargins(6, 6, 6, 6);
+    layout->setSpacing(6);
+    layout->setContentsMargins(8, 8, 8, 8);
     
-    // Título do cartão - COM ESTILO FORTE
+    // Título - estilo moderno
     QLabel* titleLabel = new QLabel(QString::fromStdString(m_card.title()), this);
     titleLabel->setStyleSheet(
-        "QLabel { "
-        "   font-weight: bold; " 
-        "   font-size: 14px; "
-        "   color: #000000; "  // ← Preto para melhor contraste
-        "   background-color: #e6f3ff; "
-        "   padding: 4px; "
-        "   border-radius: 2px; "
+        "QLabel {"
+        "   font-weight: 600;"
+        "   font-size: 13px;"
+        "   color: #172b4d;"
+        "   background-color: transparent;"
+        "   padding: 2px;"
+        "   border: none;"
         "}"
     );
     titleLabel->setWordWrap(true);
+    titleLabel->setMinimumHeight(18);
     layout->addWidget(titleLabel);
-    
-    std::cout << "CardWidget: Título adicionado: '" << m_card.title() << "'" << std::endl;
     
     // Descrição (se existir)
     if (!m_card.description().empty()) {
         QLabel* descLabel = new QLabel(QString::fromStdString(m_card.description()), this);
         descLabel->setStyleSheet(
-            "QLabel { "
-            "   color: #333333; "  // ← Cinza escuro
-            "   font-size: 12px; "
-            "   background-color: transparent; "
+            "QLabel {"
+            "   color: #5e6c84;"
+            "   font-size: 11px;"
+            "   background-color: transparent;"
+            "   padding: 1px 2px;"
+            "   border: none;"
             "}"
         );
         descLabel->setWordWrap(true);
-        descLabel->setMaximumHeight(40);
+        descLabel->setMaximumHeight(32);
         layout->addWidget(descLabel);
-        std::cout << "CardWidget: Descrição adicionada" << std::endl;
     }
     
-    // Footer simples
-    QHBoxLayout* footerLayout = new QHBoxLayout();
+    // Container para tags e metadata
+    QHBoxLayout* metaLayout = new QHBoxLayout();
     
-    // Prioridade (se existir)
+    // Tags (se existirem)
+    if (!m_card.tags().empty()) {
+        for (const auto& tag : m_card.tags()) {
+            QLabel* tagLabel = new QLabel(QString::fromStdString(tag), this);
+            tagLabel->setStyleSheet(
+                "QLabel {"
+                "   background-color: #ebecf0;"
+                "   color: #42526e;"
+                "   border-radius: 4px;"
+                "   padding: 2px 6px;"
+                "   font-size: 10px;"
+                "   font-weight: 500;"
+                "   border: none;"
+                "}"
+            );
+            metaLayout->addWidget(tagLabel);
+        }
+    }
+    
+    metaLayout->addStretch();
+    
+    // Indicadores à direita
+    QHBoxLayout* indicatorsLayout = new QHBoxLayout();
+    
+    // Assignee indicator
+    if (m_card.assigneeId().has_value()) {
+        QLabel* assigneeLabel = new QLabel("👤", this);
+        assigneeLabel->setStyleSheet("QLabel { font-size: 12px; color: #5e6c84; }");
+        indicatorsLayout->addWidget(assigneeLabel);
+    }
+    
+    // Priority indicator
     if (m_card.priority().has_value()) {
-        QString priorityText;
-        QString priorityColor;
+        QString emoji;
+        QString color;
         
         switch (*m_card.priority()) {
-            case 1: priorityText = "🔥 Alta"; priorityColor = "#ff4444"; break;
-            case 2: priorityText = "⚠️ Média"; priorityColor = "#ffaa00"; break;
-            case 3: priorityText = "💚 Baixa"; priorityColor = "#44ff44"; break;
-            default: priorityText = "📋 Normal"; priorityColor = "#888888"; break;
+            case 1: emoji = "🔴"; color = "#de350b"; break; // Alta - Vermelho
+            case 2: emoji = "🟡"; color = "#ffab00"; break; // Média - Amarelo  
+            case 3: emoji = "🟢"; color = "#36b37e"; break; // Baixa - Verde
+            default: emoji = "⚪"; color = "#dfe1e6"; break; // Normal - Cinza
         }
         
-        QLabel* priorityLabel = new QLabel(priorityText, this);
-        priorityLabel->setStyleSheet(
-            QString("QLabel { "
-                   "   color: %1; "
-                   "   font-size: 10px; "
-                   "   font-weight: bold; "
-                   "   background-color: #f8f8f8; "
-                   "   padding: 2px 6px; "
-                   "   border-radius: 3px; "
-                   "}").arg(priorityColor)
-        );
-        footerLayout->addWidget(priorityLabel);
-        std::cout << "CardWidget: Prioridade adicionada" << std::endl;
+        QLabel* priorityLabel = new QLabel(emoji, this);
+        priorityLabel->setStyleSheet(QString("QLabel { font-size: 11px; color: %1; }").arg(color));
+        indicatorsLayout->addWidget(priorityLabel);
     }
     
-    footerLayout->addStretch();
-    layout->addLayout(footerLayout);
-    
-    std::cout << "CardWidget: UI completamente configurada" << std::endl;
+    metaLayout->addLayout(indicatorsLayout);
+    layout->addLayout(metaLayout);
 }
-
 
 void CardWidget::mousePressEvent(QMouseEvent* event) {
     if (event->button() == Qt::LeftButton) {
@@ -111,13 +130,8 @@ void CardWidget::mousePressEvent(QMouseEvent* event) {
 }
 
 void CardWidget::mouseMoveEvent(QMouseEvent* event) {
-    if (!(event->buttons() & Qt::LeftButton)) {
-        return;
-    }
-    
-    if ((event->pos() - m_dragStartPosition).manhattanLength() < QApplication::startDragDistance()) {
-        return;
-    }
+    if (!(event->buttons() & Qt::LeftButton)) return;
+    if ((event->pos() - m_dragStartPosition).manhattanLength() < QApplication::startDragDistance()) return;
     
     startDrag();
 }
@@ -126,39 +140,40 @@ void CardWidget::startDrag() {
     QDrag* drag = new QDrag(this);
     QMimeData* mimeData = new QMimeData;
     
-    // Passar dados do cartão via mime data
     mimeData->setText(QString::fromStdString(m_card.title()));
-    mimeData->setData("application/x-kanban-card-id", 
-                     QByteArray::number(m_card.id()));
+    mimeData->setData("application/x-kanban-card-id", QByteArray::number(m_card.id()));
     
     drag->setMimeData(mimeData);
-    drag->setPixmap(grab()); // Captura visual do widget
+    drag->setPixmap(this->grab());
     
-    // Efeito visual durante o drag
-    setStyleSheet(
-        "CardWidget { "
-        "   background-color: #f7f8f9; "
-        "   border-radius: 4px; "
-        "   padding: 8px; "
-        "   border: 2px dashed #c1c7d0; "
-        "   opacity: 0.7; "
+    // Efeito de drag
+    this->setStyleSheet(
+        "CardWidget {"
+        "   background-color: #f8f9fa;"
+        "   border: 2px dashed #4c9aff;"
+        "   border-radius: 8px;"
+        "   padding: 8px;"
+        "   margin: 4px;"
+        "   opacity: 0.8;"
         "}"
     );
     
-    Qt::DropAction dropAction = drag->exec(Qt::MoveAction);
+    drag->exec(Qt::MoveAction);
     
-    // Restaurar estilo após o drag
-    setStyleSheet(
-        "CardWidget { "
-        "   background-color: white; "
-        "   border-radius: 4px; "
-        "   padding: 8px; "
-        "   border: 1px solid #dfe1e6; "
-        "   cursor: grab; "
+    // Restaurar estilo
+    this->setStyleSheet(
+        "CardWidget {"
+        "   background-color: #ffffff;"
+        "   border: 1px solid #ddd;"
+        "   border-radius: 8px;"
+        "   padding: 8px;"
+        "   margin: 4px;"
+        "   box-shadow: 0 1px 3px rgba(0,0,0,0.1);"
         "}"
-        "CardWidget:hover { "
-        "   background-color: #f7f8f9; "
-        "   border: 1px solid #c1c7d0; "
+        "CardWidget:hover {"
+        "   background-color: #f9f9f9;"
+        "   border: 1px solid #ccc;"
+        "   box-shadow: 0 2px 5px rgba(0,0,0,0.15);"
         "}"
     );
 }
